@@ -1,0 +1,31 @@
+{
+    "name": "karatunova_website",
+    "version": "1.0.0",
+    "description": "",
+    "main": "app.js",
+    "scripts": {
+        "start": "node app.js",
+        "dev": "",
+        "scss": "node-sass --watch scss -o public/styles"
+    },
+    "dependencies": {
+        "bootstrap": "^4.3.1",
+        "express": "^4.17.1",
+        "jquery": "^3.4.1",
+        "nodemon": "^1.19.1",
+        "popper.js": "^1.15.0"
+    },
+    "devDependencies": {
+        "grunt-reload": "^0.2.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Infernet/karatunova_website.git"
+    },
+    "author": "Infernet",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Infernet/karatunova_website/issues"
+    },
+    "homepage": "https://github.com/Infernet/karatunova_website#readme"
+}
