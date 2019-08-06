@@ -6,13 +6,178 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="scripts/main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <title>Document</title>
 </head>
 
 <body>
-    <div>
+    <div class="header">
+        <div class="header-container">
+            <div class="header__content">
+                <p class="header__content-title">Коротунова Наталья Викторовна</p>
+                <p class="header__content-description"><span class="header__content-description-first">ДЕТСКИЙ</span> ВРАЧ-НЕВРОЛОГ В ТАГАНРОГЕ</p>
+                <button class="header__content-btn">записаться на прием</button>
+            </div>
+        </div>
 
+    </div>
+    <div class="content-border">
+        <div class="content-border-g"></div>
+        <div class="content-border-b"></div>
+        <div class="content-border-r"></div>
+    </div>
+    <div class="content">
+        <div class="content__achievement">
+            <div class="content__achievement-bg-left">
+                <img src="images/achievement-bg-left.png" alt="">
+            </div>
+            <div class="content__achievement-list">
+                <div class="content__achievement-list--row">
+                    <div class="content__achievement-item">
+                        <i class="fa fa-circle" aria-hidden="true"></i>
+                        <p>Стаж работы в области неврологии более 30 лет</p>
+                    </div>
+
+                    <div class="content__achievement-item">
+                        <i class="fa fa-circle" aria-hidden="true"></i>
+                        <p>Опыт работы в области детской психиатрии более 10 лет</p>
+                    </div>
+
+                    <div class="content__achievement-item">
+                        <i class="fa fa-circle" aria-hidden="true"></i>
+                        <p>Квалификация врача лечебной физкультуры</p>
+                    </div>
+                </div>
+                <div class="content__achievement-list--row">
+
+                    <div class="content__achievement-item">
+                        <i class="fa fa-circle" aria-hidden="true"></i>
+                        <p>Длительный опыт амбулаторной практики 12 лет работы в областной физиотерапевтической больнице (больница "Гордона")</p>
+                    </div>
+
+                    <div class="content__achievement-item">
+                        <i class="fa fa-circle" aria-hidden="true"></i>
+                        <p>Сертификат Московского гештальт-института</p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="content__achievement-bg-right">
+                <img src="images/achievement-bg-right.png" alt="">
+            </div>
+        </div>
+        <div class="content__description">
+            <div class="content__description--content">
+                <div class="content__description--content-text">
+                    <p class="content__description--content-text--title">
+                        Коротунова Наталья Викторовна
+                    </p>
+                    <p class="content__description--content-text--profession">
+                        Детский врач-невролог высшей категории
+                    </p>
+                    <p class="content__description--content-text--description">
+                        Ведёт приём детей до 18 лет с особенностями развития и поведения, заболеваниями нервной системы, проблемами речи и общения, проблемами раннего возраста, вопросами школьной и детсадовской дезадаптации. Использует смежные области при диагностике заболеваний
+                        и в ходе лечения. Проводит лечение детских и материнских неврозов, оказывает семейную психологическую помощь.
+                    </p>
+                </div>
+
+                <button class="content__description--content--btn">записаться на прием</button>
+            </div>
+            <div class="content__description--photo">
+                <img src="/images/photo.png" alt="">
+            </div>
+        </div>
+        <div class="content__services">
+            <div class="content__services--row content__services--row-1">
+
+                <div class="content__services--item">
+                    <img src="/images/icons/icon_1.svg" alt="" class="content__services--item-icon">
+                    <p class="content__services--item-text">Диагностика неврологических и психологических проблем у детей до 18 лет</p>
+                </div>
+                <div class="content__services--item">
+                    <img src="/images/icons/icon_3.svg" alt="" class="content__services--item-icon">
+                    <p class="content__services--item-text">Запись в удобное для вас время и в выходные дни</p>
+                </div>
+
+            </div>
+            <div class="content__services--row content__services--row-2">
+
+                <div class="content__services--item">
+                    <img src="/images/icons/icon_2.svg" alt="" class="content__services--item-icon">
+                    <p class="content__services--item-text">Оказание помощи сложным и трудно-контактным детям</p>
+                </div>
+                <div class="content__services--item">
+                    <img src="/images/icons/icon_4.svg" alt="" class="content__services--item-icon">
+                    <p class="content__services--item-text">Оказание психологической помощи матерям</p>
+                </div>
+
+            </div>
+            <div class="content__services--row content__services--row-3">
+
+                <div class="content__services--item">
+                    <img src="/images/icons/icon_5.svg" alt="" class="content__services--item-icon">
+                    <p class="content__services--item-text">Выезд и проведение диагностики на дом</p>
+                </div>
+                <div class="content__services--item">
+                    <img src="/images/icons/icon_6.svg" alt="" class="content__services--item-icon">
+                    <p class="content__services--item-text">Общение с доктором в социальных сетях и мессенджерах (Одноклассники, Whats App)</p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="content__office">
+            <div class="content__office--header">
+                <p class="content__office--header-title">Частный кабинет</p>
+                <p class="content__office--header-title">с современным оборудованием</p>
+                <p class="content__office--header-text">у нас есть все необходимое для диагностики и лечения ваших детей</p>
+            </div>
+            <div class="content__office--slider">
+                <a href="#" class="content__office--slider-prev">
+
+                </a>
+
+                <div class="content__office--slider-carousel">
+
+                    <div class="content__office--slider-slide">
+                        <p>Lorem.</p>
+                    </div>
+
+                    <div class="content__office--slider-slide">
+                        <p>Lorem, ipsum.</p>
+                    </div>
+
+                    <div class="content__office--slider-slide">
+                        <p>Lorem, ipsum dolor.</p>
+                    </div>
+
+                    <div class="content__office--slider-slide content__office--slider-slide--hidden">
+                        <p>Lorem ipsum dolor sit.</p>
+                    </div>
+
+
+
+                </div>
+
+
+                <a href="#" class="content__office--slider-next">
+
+                </a>
+
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
     </div>
 </body>
 
