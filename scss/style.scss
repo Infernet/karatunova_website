@@ -1,3 +1,15 @@
+i.icon_r {
+    color: #F06182;
+}
+
+i.icon_b {
+    color: #47ABEA;
+}
+
+i.icon_g {
+    color: #89BE16;
+}
+
 .header {
     background: {
         image: url("/images/logo.png");
@@ -256,7 +268,7 @@
     }
     &__office {
         display: flex;
-        background-color: #89BE16;
+        //background-color: #89BE16;
         flex-direction: column;
         //height: 605px;
         padding: 70px 0;
@@ -264,6 +276,7 @@
             image: url("/images/office-body-bg.png");
             repeat: no-repeat;
             position: 0% 30%;
+            //size: contain;
         }
         &--header {
             display: flex;
@@ -303,11 +316,11 @@
                 flex-direction: row;
                 justify-content: space-evenly;
                 align-items: center;
-                width: 100%;
-                background-color: #47ABEA;
+                width: 70%;
+                //background-color: #47ABEA;
             }
             &-slide {
-                background-color: gray;
+                //background-color: gray;
                 width: 398px;
                 height: 398px;
                 &--active {
@@ -319,29 +332,395 @@
             }
             &-prev {
                 //background-color: #193A5E;
-                margin: 0 auto;
-                width: 200px;
-                display: block;
-                background: {
-                    image: url("/images/slider/arrow-prev.svg");
-                    repeat: no-repeat;
-                    // size: cover;
-                    position: center;
-                }
+                // margin: 0 auto;
+                // width: 200px;
+                // display: block;
+                // background: {
+                //     image: url("/images/slider/arrow-prev.svg");
+                //     repeat: no-repeat;
+                //     // size: cover;
+                //     position: center;
+                // }
+                // text-decoration: none;
+                margin: auto auto;
                 text-decoration: none;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: center;
             }
             &-next {
                 //background-color: #193A5E;
-                margin: 0 auto;
-                width: 200px;
+                // margin: 0 auto;
+                // width: 200px;
+                // text-decoration: none;
+                // background: {
+                //     image: url("/images/slider/arrow-next.svg");
+                //     repeat: no-repeat;
+                //     // size: cover;
+                //     position: center;
+                // }
+                margin: auto auto;
                 text-decoration: none;
-                background: {
-                    image: url("/images/slider/arrow-next.svg");
-                    repeat: no-repeat;
-                    // size: cover;
-                    position: center;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    }
+    &__qa {
+        display: flex;
+        //background-color: rgb(199, 8, 199);
+        flex-direction: column;
+        height: 605px;
+        padding: 70px 0;
+        background: {
+            image: url("/images/qa-bg.png");
+            size: cover;
+            repeat: no-repeat;
+        }
+        &--header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0 auto;
+            &-title {
+                font: {
+                    family: Merriweather;
+                    size: 35px;
+                    weight: bold;
+                }
+                color:#193A5E;
+                text: {
+                    transform: uppercase;
+                    align: center;
                 }
             }
+            &-text {
+                font: {
+                    family: Ubuntu;
+                    size: 25px;
+                }
+                color:#F06182;
+            }
+        }
+        &--slider {
+            display: flex;
+            flex-direction: row;
+            height: 100%;
+            justify-content: center;
+            align-content: center;
+            &-carousel {
+                display: flex;
+                flex-direction: row;
+                //background-color: #47ABEA;
+                justify-content: space-between;
+                align-items: flex-start;
+                width: 70%;
+            }
+            &-slide {
+                background-color: #FFFFFF;
+                width: 619px;
+                height: 366px !important;
+                padding: 30px 50px;
+                margin: 0 25px;
+                &--title {
+                    font: {
+                        family: Ubuntu;
+                        size: 20px;
+                    }
+                    text-align: left;
+                    color:#193A5E;
+                }
+                &--circle {}
+                &--description {
+                    font: {
+                        family: Ubuntu;
+                        size: 18px;
+                    }
+                    text-align: left;
+                    color:#404040;
+                }
+                &--shadow {
+                    background:: {
+                        image: url("/images/qa-shadow.png");
+                        size: cover;
+                        repeat: no-repeat;
+                    }
+                    height: 40px;
+                    width: 100%;
+                }
+            }
+            &-prev {
+                //background-color: #193A5E;
+                margin: auto auto;
+                //width: 200px;
+                display: block;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-decoration: none;
+                cursor: pointer;
+            }
+            &-next {
+                margin: auto auto;
+                //width: 200px;
+                text-decoration: none;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    }
+    &__quote {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        height: 600px;
+        background: {
+            image: url("/images/quote-bg.png");
+            //size: cover;
+            repeat: no-repeat;
+        }
+        &--photo {
+            margin-left: auto;
+        }
+        &--quote {
+            display: flex;
+            flex-direction: column;
+            margin: auto auto;
+            width: 772px;
+            &-title {
+                font: {
+                    family: Ubuntu;
+                    size: 20px;
+                }
+                color:#F06182;
+                text-align:left;
+            }
+            &-description {
+                font: {
+                    family: Ubuntu;
+                    size: 25px;
+                    weight: medium;
+                }
+                color:#193A5E;
+                text-align: left;
+            }
+        }
+    }
+    &__licenses {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        height: 605px;
+        background: {
+            image: url("/images/qa-bg.png");
+            size: cover;
+            repeat: no-repeat;
+        }
+        &--header {
+            display: flex;
+            flex-direction: column;
+            &-title {
+                font: {
+                    family: Merriweather;
+                    size: 35px;
+                    weight: bold;
+                }
+                text-transform: uppercase;
+                color:#193A5E;
+                text-align: center;
+            }
+            &-text {
+                font: {
+                    family: Ubuntu;
+                    size: 25px;
+                }
+                color:#F06182;
+                text-align: center;
+            }
+        }
+        &--slider {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            &-carousel {
+                display: flex;
+                flex-direction: row;
+                //background-color: #47ABEA;
+                justify-content: space-evenly;
+                align-items: flex-start;
+                width: 70%;
+            }
+            &-slide {
+                img {
+                    margin: 0 auto;
+                }
+            }
+            &-prev {
+                margin: auto auto;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-decoration: none;
+                cursor: pointer;
+            }
+            &-next {
+                margin: auto auto;
+                text-decoration: none;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    }
+    &__contact {
+        display: flex;
+        flex-direction: row;
+        //align-items: center;
+        //height: 790px;
+        justify-content: center;
+        margin: 50px 0;
+        background: url(/images/office-title-bg.png) no-repeat 13% 0%, url(/images/achievement-bg-right.png) no-repeat 82% 0%;
+        &-col {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            margin: 0 8px;
+            // &:first-child {
+            //     background: {
+            //         image: url("/images/office-title-bg.png");
+            //         repeat: no-repeat;
+            //         position: 5% 5%;
+            //     }
+            // }
+            // &:last-child {
+            //     background: {
+            //         image: url("/images/achievement-bg-right.png");
+            //         repeat: no-repeat;
+            //     }
+            // }
+            &--phone {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                &--title {
+                    font: {
+                        family: Ubuntu;
+                        size: 25px;
+                        weight: bold;
+                    }
+                    color:#193A5E;
+                    text-align: left;
+                }
+                &--number {
+                    font: {
+                        family: Ubuntu;
+                        size: 83px;
+                        weight: bold;
+                    }
+                    color:#F06182;
+                    text-align: left;
+                }
+            }
+            &--adress {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                //justify-content: space-between;
+                &--title {
+                    font: {
+                        family: Ubuntu;
+                        size: 25px;
+                        weight: bold;
+                    }
+                    color:#193A5E;
+                    text-align: center;
+                    text-transform: uppercase;
+                }
+                &--adress {
+                    font: {
+                        family: Ubuntu;
+                        size: 20px;
+                        weight: medium;
+                    }
+                    color:#89BE16;
+                    text-align: center;
+                    text-transform: uppercase;
+                }
+                &--description {
+                    font: {
+                        family: Ubuntu;
+                        size: 18px;
+                    }
+                    color:#89BE16;
+                    text-align: center;
+                }
+            }
+            &--feedback {}
+            &--ymap {}
+        }
+    }
+}
+
+.footer {
+    width: 100%;
+    height: 244px;
+    background-position: center center;
+    display: flex;
+    justify-content: center;
+    background: {
+        image: url("/images/footer-bg.png");
+        size: cover;
+        repeat: no-repeat;
+        position: center center;
+    }
+    &-content {
+        max-width: 1600px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        &--title {
+            font: {
+                family: Merriweather;
+                size: 35px;
+                weight: bold;
+            }
+            color:#193A5E;
+            text-align: center;
+        }
+        &--description {
+            font: {
+                family: Ubuntu;
+                size: 25px;
+                weight: medium;
+            }
+            color:#F06182;
+            text-align: center;
+        }
+        &-design {
+            display: flex;
+            flex-direction: row;
+            align-items: end;
+            &-text {
+                font: {
+                    family: Roboto;
+                    size: 24px;
+                }
+                color:#000000;
+                text-align: center;
+                margin-left: 8px;
+            }
+            &-logo {}
         }
     }
 }
