@@ -40,7 +40,6 @@ $(document).ready(function() {
 
 
     carousel('content__qa--slider-carousel', 'content__qa--slider-next', 'content__qa--slider-prev', 2, 1);
-
     carousel('content__office--slider-carousel', 'content__office--slider-next', 'content__office--slider-prev', 3, 1);
     carousel('content__licenses--slider-carousel', 'content__licenses--slider-next', 'content__licenses--slider-prev', 3, 2);
 });
@@ -62,9 +61,10 @@ const carousel = function(carousel, next, prev, slider, md_slider) {
         //autoplay: true,
         //autoplaySpeed: 3000,
         responsive: [{
-            breakpoint: 1240,
+            breakpoint: 1200,
             settings: {
-                slidesToShow: slider,
+                slidesToShow: md_slider,
+                //centerMode: true,
             }
         }, {
             breakpoint: 960,
