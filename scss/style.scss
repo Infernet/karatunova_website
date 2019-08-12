@@ -5,6 +5,12 @@
 @import "../node_modules/bootstrap/scss/mixins";
 //_______________________________________________________________________
 //_______________________________________________________________________
+@mixin media-breakpoint-down-xsmall {
+    @media (max-width: 400px) {
+        @content;
+    }
+}
+
 .icon_r {
     color: #F06182;
 }
@@ -79,6 +85,12 @@
             @include media-breakpoint-down(md) {
                 font-size: 35px;
             }
+            @include media-breakpoint-down(xs) {
+                font-size: 30px;
+            }
+            @include media-breakpoint-down-xsmall() {
+                font-size: 27px;
+            }
         }
         &-description {
             color: #193A5E;
@@ -91,6 +103,12 @@
             @include media-breakpoint-down(md) {
                 font-size: 37px;
             }
+            @include media-breakpoint-down(xs) {
+                font-size: 30px;
+            }
+            @include media-breakpoint-down-xsmall() {
+                font-size: 27px;
+            }
             &-first {
                 font: {
                     family: Ubuntu;
@@ -100,6 +118,12 @@
                 @include media-breakpoint-down(md) {
                     font-size: 27px;
                     display: block;
+                }
+                @include media-breakpoint-down(xs) {
+                    font-size: 25px;
+                }
+                @include media-breakpoint-down-xsmall() {
+                    font-size: 22px;
                 }
             }
         }
@@ -117,6 +141,10 @@
             @include media-breakpoint-down(md) {
                 padding: 15px 50px;
                 font-size: 16px;
+            }
+            @include media-breakpoint-down(xs) {
+                font-size: 13px;
+                padding: 15px 30px;
             }
         }
     }
@@ -169,7 +197,12 @@
         &-list {
             display: flex;
             flex-direction: row;
+            margin-left: -3%;
+            // @include media-breakpoint-down(lg) {
+            //     margin-left: -3%;
+            // }
             @include media-breakpoint-down(md) {
+                margin-left: 0;
                 flex-direction: column;
                 padding: 50px 30px 100px 30px;
                 background: {
@@ -178,6 +211,9 @@
                     size: 50%;
                     position: bottom right;
                 }
+            }
+            @include media-breakpoint-down(xs) {
+                padding: 50px 0px 100px 0px;
             }
             &--row {
                 display: flex;
@@ -189,6 +225,9 @@
                 @include media-breakpoint-down(md) {
                     width: 100%;
                     margin: 0;
+                }
+                @include media-breakpoint-down-xsmall() {
+                    padding: 0 10px;
                 }
             }
         }
@@ -211,6 +250,10 @@
             @include media-breakpoint-down(md) {
                 margin: 10px 0;
             }
+            @include media-breakpoint-down(xs) {
+                font-size: 15px;
+                align-items: baseline;
+            }
         }
         &-bg {
             &-left {
@@ -221,12 +264,20 @@
                 background-size: contain;
                 background-position: center;
                 width: 30.5%;
+                @include media-breakpoint-down(lg) {
+                    background: {
+                        size: 150%;
+                        position: 100% center;
+                    }
+                    margin-left: -7%;
+                    width: 34.7%;
+                }
                 @include media-breakpoint-down(md) {
                     display: none;
                 }
             }
             &-right {
-                margin-left: -7.8%;
+                margin-left: -10.8%;
                 display: flex;
                 align-items: center;
                 background-image: url("/images/achievement-bg-right.png");
@@ -234,6 +285,13 @@
                 background-size: contain;
                 background-position: center;
                 width: 23.7%;
+                @include media-breakpoint-down(lg) {
+                    background: {
+                        size: 250%;
+                        position: 100% center;
+                    }
+                    margin-left:-7.8%;
+                }
                 @include media-breakpoint-down(md) {
                     display: none;
                 }
@@ -272,6 +330,9 @@
                 @include media-breakpoint-down(md) {
                     margin: 20% 50px 0 50px;
                 }
+                @include media-breakpoint-down(sm) {
+                    margin: 20% 20px 0 20px;
+                }
                 &--title {
                     font: {
                         family: Merriweather;
@@ -279,6 +340,12 @@
                         weight: bold;
                     }
                     color:#193A5E;
+                    @include media-breakpoint-down(xs) {
+                        font-size: 30px;
+                    }
+                    @include media-breakpoint-down-xsmall() {
+                        font-size: 25px;
+                    }
                 }
                 &--profession {
                     font: {
@@ -287,6 +354,12 @@
                         weight: medium;
                     }
                     color: #F06182;
+                    @include media-breakpoint-down(xs) {
+                        font-size: 20px;
+                    }
+                    @include media-breakpoint-down-xsmall() {
+                        font-size: 15px;
+                    }
                 }
                 &--description {
                     font: {
@@ -294,6 +367,12 @@
                         size: 20px;
                     }
                     color:#404040;
+                    @include media-breakpoint-down(xs) {
+                        font-size: 15px;
+                    }
+                    @include media-breakpoint-down-xsmall() {
+                        font-size: 10px;
+                    }
                 }
             }
             &--btn {
@@ -307,6 +386,13 @@
                 color: #FFFFFF;
                 @include media-breakpoint-down(md) {
                     margin: 20px auto 10px auto;
+                }
+                @include media-breakpoint-down(xs) {
+                    font-size: 20px;
+                }
+                @include media-breakpoint-down-xsmall() {
+                    font-size: 15px;
+                    padding: 20px 40px;
                 }
             }
         }
@@ -332,6 +418,11 @@
             color: #F7FAFF;
             size: contain;
         }
+        @media (max-width: 1600px) {
+            & {
+                background-size: cover;
+            }
+        }
         display: flex;
         align-items:center;
         justify-content: center;
@@ -346,12 +437,15 @@
             display: flex;
             flex-direction: column;
             justify-content: space-evenly;
-            margin: 50px auto 50px 50px;
+            margin: 50px auto 50px auto;
             @include media-breakpoint-only(lg) {
                 margin: 50px 50px 50px 100px;
             }
             @include media-breakpoint-down(md) {
                 margin: 50px auto;
+            }
+            @include media-breakpoint-down(xs) {
+                margin: 50px 10px;
             }
         }
         &--row {
@@ -420,12 +514,23 @@
                 max-width: 423px;
                 margin-left: -20px;
                 color:#193A5E;
-                @include media-breakpoint-only(lg) {
-                    font-size: 20px;
+                // @include media-breakpoint-only(lg) {
+                //     font-size: 20px;
+                // }
+                @media (max-width:1200px) {
+                    & {
+                        font-size: 20px;
+                    }
                 }
                 @include media-breakpoint-down(md) {
                     font-size: 20px;
                     margin-left: 0;
+                }
+                @include media-breakpoint-down(xs) {
+                    font-size: 15px;
+                    max-width: none;
+                    width: 100%;
+                    //margin-left: -10px;
                 }
             }
             &__row {
@@ -451,7 +556,7 @@
         background: {
             image: url("/images/office-body-bg.png");
             repeat: no-repeat;
-            position: 0% 30%;
+            position: 0% -10%;
             //size: contain;
         }
         @include media-breakpoint-down(md) {
@@ -470,6 +575,10 @@
                 margin: 0;
                 background-position: 45% 20%;
                 padding: 50px 0 30px 0;
+            }
+            @include media-breakpoint-down-xsmall() {
+                background-position: 0% 0%;
+                padding: 50px 5px 30px 5px;
             }
             &-title {
                 font: {
@@ -492,6 +601,7 @@
                     size: 25px;
                 }
                 color:#F06182;
+                text-align: center;
                 @include media-breakpoint-down(md) {
                     font-size: 15px;
                 }
@@ -522,6 +632,9 @@
                     flex-direction: column;
                     align-items: center;
                     justify-content: center;
+                    img {
+                        width: 80%;
+                    }
                 }
             }
             &-prev {
@@ -574,6 +687,9 @@
                     align: center;
                 }
                 @include media-breakpoint-down(md) {
+                    font-size: 30px;
+                }
+                @include media-breakpoint-down(sm) {
                     font-size: 25px;
                 }
             }
@@ -583,7 +699,11 @@
                     size: 25px;
                 }
                 color:#F06182;
+                text-align: center;
                 @include media-breakpoint-down(md) {
+                    font-size: 20px;
+                }
+                @include media-breakpoint-down(sm) {
                     font-size: 15px;
                 }
             }
@@ -611,8 +731,21 @@
             }
             &-wrapper {
                 width: 619px;
-                height: 500px !important;
+                height: 700px !important;
                 margin: 0 25px;
+                @include media-breakpoint-down(lg) {
+                    height: 650px !important;
+                }
+                @include media-breakpoint-down(md) {
+                    height: 600px !important;
+                }
+                @include media-breakpoint-down(sm) {
+                    margin: 0 15px;
+                }
+                @include media-breakpoint-down-xsmall() {
+                    height: 500px !important;
+                    margin: 0 10px;
+                }
             }
             &-slide {
                 display: flex;
@@ -623,6 +756,9 @@
                     background-color: #FFFFFF;
                     height: 100%;
                     padding: 30px 48px 0px 48px;
+                    @include media-breakpoint-down(xs) {
+                        padding: 15px 15px 0px 15px;
+                    }
                 }
                 &--title {
                     font: {
@@ -631,13 +767,28 @@
                     }
                     text-align: left;
                     color:#193A5E;
+                    @include media-breakpoint-down(lg) {
+                        font-size: 18px;
+                    }
                     @include media-breakpoint-down(md) {
+                        font-size: 20px;
+                    }
+                    @include media-breakpoint-down(sm) {
+                        font-size: 18px;
+                    }
+                    @include media-breakpoint-down-xsmall() {
                         font-size: 15px;
                     }
                 }
                 &--circle {
                     @include media-breakpoint-down(md) {
+                        font-size: 15px;
+                    }
+                    @include media-breakpoint-down(sm) {
                         font-size: 10px;
+                    }
+                    @include media-breakpoint-down-xsmall() {
+                        font-size: 7px;
                     }
                 }
                 &--description {
@@ -647,8 +798,17 @@
                     }
                     text-align: left;
                     color:#404040;
+                    @include media-breakpoint-down(lg) {
+                        font-size: 15px;
+                    }
                     @include media-breakpoint-down(md) {
-                        font-size: 12px;
+                        font-size: 18px;
+                    }
+                    @include media-breakpoint-down(sm) {
+                        font-size: 15px;
+                    }
+                    @include media-breakpoint-down-xsmall() {
+                        font-size: 13px;
                     }
                 }
                 &--shadow {
@@ -691,15 +851,16 @@
         align-items: center;
         justify-content: space-around;
         //height: 600px;
-        margin-top: 250px;
+        padding-top: 250px;
         background: {
             image: url("/images/quote-bg.png");
             //size: cover;
             repeat: no-repeat;
-            position: 100% 0%;
+            position: 100% 25%;
         }
         @include media-breakpoint-down(md) {
             margin-top: -50px;
+            padding-top: 0;
             background-image: none;
         }
         .wrapper_row {
@@ -709,8 +870,12 @@
         }
         &--photo {
             margin-left: auto;
+            width: auto !important;
             @include media-breakpoint-down(md) {
-                margin: -80px auto 0px auto;
+                margin: -60px auto 0px auto;
+            }
+            @include media-breakpoint-down(xs) {
+                width: 100% !important;
             }
         }
         &--quote {
@@ -722,6 +887,9 @@
                 max-width: 80%;
                 margin: auto auto;
             }
+            @include media-breakpoint-down-xsmall() {
+                max-width: 90%;
+            }
             &-title {
                 font: {
                     family: Ubuntu;
@@ -729,6 +897,9 @@
                 }
                 color:#F06182;
                 text-align:left;
+                @include media-breakpoint-down(lg) {
+                    font-size: 18px;
+                }
                 @include media-breakpoint-down(md) {
                     display: flex;
                     flex-direction: row;
@@ -736,6 +907,9 @@
                     div {
                         margin-right: 10px;
                     }
+                }
+                @include media-breakpoint-down-xsmall() {
+                    font-size: 13px;
                 }
             }
             &-description {
@@ -746,6 +920,9 @@
                 }
                 color:#193A5E;
                 text-align: left;
+                @include media-breakpoint-down(lg) {
+                    font-size: 20px;
+                }
                 @include media-breakpoint-down(md) {
                     font: {
                         size: 15px;
@@ -875,14 +1052,19 @@
             padding-top: 100px;
             background: url(/images/office-title-bg.png) no-repeat 20% 5%;
         }
+        @include media-breakpoint-down-xsmall() {
+            background-position: 0% 6%;
+        }
         &-col {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: space-between;
             margin: 0 8px;
+            width: 50%;
             @include media-breakpoint-down(md) {
                 margin: 50px 0;
+                width: 100%;
             }
             &--phone {
                 width: 100%;
@@ -896,22 +1078,91 @@
                     }
                     color:#193A5E;
                     text-align: center;
+                    @include media-breakpoint-down(lg) {
+                        font-size: 23px;
+                    }
                     @include media-breakpoint-down(md) {
                         font-size: 20px;
                         //margin: 0 auto;
+                    }
+                    @include media-breakpoint-down(xs) {
+                        font-size: 15px;
                     }
                 }
                 &--number {
                     font: {
                         family: Ubuntu;
-                        size: 83px;
+                        size: 70px;
                         weight: bold;
                     }
                     color:#F06182;
                     text-align: center;
+                    @include media-breakpoint-down(lg) {
+                        font-size: 63px;
+                    }
                     @include media-breakpoint-down(md) {
                         font-size: 50px;
                         //margin: 0 auto;
+                    }
+                    @include media-breakpoint-down(xs) {
+                        font-size: 40px
+                    }
+                    @include media-breakpoint-down-xsmall() {
+                        font-size: 30px;
+                    }
+                }
+            }
+            &--feedback {
+                width: 100%;
+                height: calc(1600px* 0.28375);
+                max-width: 674px;
+                max-height: 454px;
+                display: flex;
+                flex-direction: column;
+                padding: 10px;
+                align-items: flex-start;
+                justify-content: space-evenly;
+                background: {
+                    image: url("/images/form-bg.png");
+                    repeat: no-repeat;
+                    size: cover;
+                    position: center center;
+                }
+                &--title {
+                    width: 100%;
+                    text-align: center;
+                    font: {
+                        family: Merriweather;
+                        size: 35px;
+                        weight: bold;
+                    }
+                    text-transform: uppercase;
+                    color: #193A5E;
+                }
+                &--inputs {
+                    div.md-form {
+                        label {
+                            font: {
+                                family: Ubuntu;
+                                size: 20px;
+                            }
+                            color:#747474;
+                        }
+                        input {
+                            font: {
+                                family: Ubuntu;
+                                size: 20px;
+                            }
+                            color:#747474;
+                        }
+                    }
+                    .feedbackSubmit {
+                        padding-top: .7rem;
+                        padding-bottom: .7rem;
+                        border: 2px solid #F06182!important;
+                        background-color: #f06182!important;
+                        border-radius: 50px;
+                        color: #fff!important;
                     }
                 }
             }
@@ -929,8 +1180,14 @@
                     color:#193A5E;
                     text-align: center;
                     text-transform: uppercase;
+                    @include media-breakpoint-down(lg) {
+                        font-size: 23px;
+                    }
                     @include media-breakpoint-down(md) {
                         font-size: 20px;
+                    }
+                    @include media-breakpoint-down(xs) {
+                        font-size: 15px;
                     }
                 }
                 &--adress {
@@ -942,8 +1199,14 @@
                     color:#89BE16;
                     text-align: center;
                     text-transform: uppercase;
+                    @include media-breakpoint-down(lg) {
+                        font-size: 18px;
+                    }
                     @include media-breakpoint-down(md) {
                         font-size: 15px;
+                    }
+                    @include media-breakpoint-down(xs) {
+                        font-size: 13px;
                     }
                 }
                 &--description {
@@ -953,14 +1216,20 @@
                     }
                     color:#89BE16;
                     text-align: center;
+                    @include media-breakpoint-down(lg) {
+                        font-size: 15px;
+                    }
                     @include media-breakpoint-down(md) {
                         font-size: 12px;
                     }
+                    @include media-breakpoint-down(xs) {
+                        font-size: 10px;
+                    }
                 }
             }
-            &--feedback {}
             &--ymap {
-                margin: auto 0;
+                max-width: 674px;
+                max-height: 454px;
             }
         }
     }
@@ -975,7 +1244,7 @@
     align-items: center;
     background: {
         image: url("/images/footer-bg.png");
-        size: contain;
+        size: cover;
         repeat: repeat-x;
         position: center center;
     }
@@ -989,30 +1258,41 @@
         flex-direction: column;
         align-items: center;
         margin: 30px 0 15px 0;
-        &--title {
-            font: {
-                family: Merriweather;
-                size: 35px;
-                weight: bold;
+        &--name {
+            display: flex;
+            flex-direction: column;
+            margin: 10px 0;
+            &--title {
+                font: {
+                    family: Merriweather;
+                    size: 35px;
+                    weight: bold;
+                }
+                color:#193A5E;
+                text-align: center;
+                //margin-top: 20px;
+                @include media-breakpoint-down(lg) {
+                    font-size: 25px;
+                }
+                @include media-breakpoint-down(md) {
+                    font-size: 20px;
+                }
             }
-            color:#193A5E;
-            text-align: center;
-            //margin-top: 20px;
-            @include media-breakpoint-down(md) {
-                font-size: 20px;
-            }
-        }
-        &--description {
-            font: {
-                family: Ubuntu;
-                size: 25px;
-                weight: medium;
-            }
-            color:#F06182;
-            text-align: center;
-            //margin-bottom: auto;
-            @include media-breakpoint-down(md) {
-                font-size: 15px;
+            &--description {
+                font: {
+                    family: Ubuntu;
+                    size: 25px;
+                    weight: medium;
+                }
+                color:#F06182;
+                text-align: center;
+                //margin-bottom: auto;
+                @include media-breakpoint-down(lg) {
+                    font-size: 20px;
+                }
+                @include media-breakpoint-down(md) {
+                    font-size: 15px;
+                }
             }
         }
         &-design {
@@ -1027,6 +1307,9 @@
                 color:#000000;
                 text-align: center;
                 margin-right: 8px;
+                @include media-breakpoint-down(lg) {
+                    font-size: 18px;
+                }
                 @include media-breakpoint-down(md) {
                     font-size: 14px;
                     margin: auto 8px auto 0;
