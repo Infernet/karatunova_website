@@ -15,6 +15,9 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/css/mdb.min.css" rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css'>
+    <link rel="stylesheet" href="scripts/slick-lightbox/dist/slick-lightbox.css">
+
 
 
     <!-- JQuery -->
@@ -28,6 +31,9 @@
     <script src="https://api-maps.yandex.ru/2.1/?apikey=<>&lang=ru_RU" type="text/javascript"></script>
 
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script type="text/javascript" src="scripts/jquery.maskedinput/src/jquery.maskedinput.js"></script>
+
+    <script src="scripts/slick-lightbox/dist/slick-lightbox.js"></script>
 
 
     <script src="scripts/main.js"></script>
@@ -41,7 +47,7 @@
             <div class="header__content">
                 <p class="header__content-title">Коротунова Наталья Викторовна</p>
                 <p class="header__content-description"><span class="header__content-description-first">ДЕТСКИЙ</span> ВРАЧ-НЕВРОЛОГ В ТАГАНРОГЕ</p>
-                <button class="header__content-btn">записаться на прием</button>
+                <button class="header__content-btn show__feedback">записаться на прием</button>
             </div>
         </div>
 
@@ -110,7 +116,7 @@
                         </p>
                     </div>
 
-                    <button class="content__description--content--btn">записаться на прием</button>
+                    <button class="content__description--content--btn  show__feedback">записаться на прием</button>
                 </div>
                 <div class="content__description--photo">
                     <img src="/images/photo.png" alt="">
@@ -247,7 +253,7 @@
                                 </g>
                                 </svg>
 
-                            <p class="content__services--item-text">Запись в удобное для вас время и в выходные дни</p>
+                            <p class="content__services--item-text">Прием в удобное для вас время и в выходные дни</p>
 
                         </div>
 
@@ -608,7 +614,7 @@
                                 </svg>
 
 
-                            <p class="content__services--item-text">Выезд и проведение диагностики на дом</p>
+                            <p class="content__services--item-text">Выезд и проведение диагностики на дому</p>
 
                         </div>
                         <div class="content__services--item">
@@ -814,7 +820,7 @@
                                         <i class="fa fa-circle icon_g" aria-hidden="true"></i>
                                     </div>
                                     <p class="content__qa--slider-slide--description">Возможно, это безобидная темповая задержка, но в некоторых случаях есть риск того, что пропустили нарушения в работе речедвигательного или речевоспринимающего центра, расстройства артикуляции, интеллектуальную недостаточность
-                                        или даже аутичность. С этими проблемами нужно работать совместно с логопедом и психологом. И как можно раньше</p>
+                                        или даже аутичность. С этими проблемами нужно работать совместно с логопедом и психологом. И как можно раньше.</p>
                                 </div>
 
                                 <img src="/images/qa-shadow.png" alt="">
@@ -830,8 +836,9 @@
                                         <i class="fa fa-circle icon_b" aria-hidden="true"></i>
                                         <i class="fa fa-circle icon_g" aria-hidden="true"></i>
                                     </div>
-                                    <p class="content__qa--slider-slide--description">Возможно, это безобидная темповая задержка, но в некоторых случаях есть риск того, что пропустили нарушения в работе речедвигательного или речевоспринимающего центра, расстройства артикуляции, интеллектуальную недостаточность
-                                        или даже аутичность. С этими проблемами нужно работать совместно с логопедом и психологом. И как можно раньше</p>
+                                    <p class="content__qa--slider-slide--description">В данных ситуациях скорее идёт речь о детском неврозе или срыве нервной деятельности на фоне врождённых предрасположенностях. Помимо лекарств, снижающих уровень стресса, необходимо понять причины проблем совместно с
+                                        доктором.
+                                    </p>
                                 </div>
 
                                 <img src="/images/qa-shadow.png" alt="">
@@ -841,13 +848,29 @@
                         <div class="content__qa--slider-wrapper">
                             <div class="content__qa--slider-slide">
                                 <div class="content__qa--slider-slide--content">
-                                    <p class="content__qa--slider-slide--title">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit, quia?</p>
+                                    <p class="content__qa--slider-slide--title">Ребенок плохо учится, долго запоминает информацию, часто отвлекается и плохо себя ведёт в школе или детском саду - это болезнь или характер?</p>
                                     <div class="content__qa--slider-slide--circle">
                                         <i class="fa fa-circle icon_r" aria-hidden="true"></i>
                                         <i class="fa fa-circle icon_b" aria-hidden="true"></i>
                                         <i class="fa fa-circle icon_g" aria-hidden="true"></i>
                                     </div>
-                                    <p class="content__qa--slider-slide--description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id, debitis hic unde vero ad maiores.</p>
+                                    <p class="content__qa--slider-slide--description">Бывает по разному, но чаще всего - это болезненное состояние связано с риском формирования такого характера.</p>
+                                </div>
+
+                                <img src="/images/qa-shadow.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="content__qa--slider-wrapper">
+                            <div class="content__qa--slider-slide">
+                                <div class="content__qa--slider-slide--content">
+                                    <p class="content__qa--slider-slide--title">Головные боли, усталость от погоды это нормально?</p>
+                                    <div class="content__qa--slider-slide--circle">
+                                        <i class="fa fa-circle icon_r" aria-hidden="true"></i>
+                                        <i class="fa fa-circle icon_b" aria-hidden="true"></i>
+                                        <i class="fa fa-circle icon_g" aria-hidden="true"></i>
+                                    </div>
+                                    <p class="content__qa--slider-slide--description">Боль - это всегда сигнал неблагополучия. В данном примере могли пострадать структуры мозга, в грудном возрасте, более точно ответить на этот вопрос может только невролог при личном контакте и обследовании.</p>
                                 </div>
 
                                 <img src="/images/qa-shadow.png" alt="">
@@ -891,7 +914,7 @@
             <div class="wrapper_col">
                 <div class="content__licenses--header">
                     <p class="content__licenses--header-title">лицензии и сертификаты</p>
-                    <p class="content__licenses--header-text">С какими симптомами стоит обратиться к детскому врачу-неврологу?</p>
+                    <!-- <p class="content__licenses--header-text">С какими симптомами стоит обратиться к детскому врачу-неврологу?</p> -->
                 </div>
                 <div class="content__licenses--slider">
                     <a href="#" class="content__licenses--slider-prev">
@@ -901,7 +924,12 @@
                     <div class="content__licenses--slider-carousel">
 
 
+                        <div class="content__licenses--slider-slide">
+                            <div class="content__licenses--slider-slide-container">
 
+                                <img src="/images/licenses/license_1.jpg" alt="">
+                            </div>
+                        </div>
 
 
                         <div class="content__licenses--slider-slide">
@@ -918,15 +946,12 @@
                             </div>
                         </div>
 
-
-
                         <div class="content__licenses--slider-slide">
                             <div class="content__licenses--slider-slide-container">
 
                                 <img src="/images/licenses/certificate_0.jpg" alt="">
                             </div>
                         </div>
-
 
                         <div class="content__licenses--slider-slide">
                             <div class="content__licenses--slider-slide-container">
@@ -1009,12 +1034,7 @@
                         </div>
 
 
-                        <div class="content__licenses--slider-slide">
-                            <div class="content__licenses--slider-slide-container">
 
-                                <img src="/images/licenses/certificate_11.jpg" alt="">
-                            </div>
-                        </div>
 
                         <div class="content__licenses--slider-slide">
                             <div class="content__licenses--slider-slide-container">
@@ -1030,12 +1050,14 @@
                             </div>
                         </div>
 
+
                         <div class="content__licenses--slider-slide">
                             <div class="content__licenses--slider-slide-container">
 
-                                <img src="/images/licenses/license_1.jpg" alt="">
+                                <img src="/images/licenses/certificate_11.jpg" alt="">
                             </div>
                         </div>
+
 
                     </div>
 
@@ -1063,30 +1085,38 @@
 
 
 
-                    <form action="" method="post" class="content__contact-col--feedback">
+                    <form action="" method="post" class="content__contact-col--feedback needs-validation" novalidate>
                         <p class="content__contact-col--feedback--title">ЗАПИШИТЕСЬ НА ПРИЕМ</p>
 
                         <div class="content__contact-col--feedback--inputs">
 
                             <div class="md-form">
-                                <input type="text" id="feedbackName" class="form-control">
+                                <input type="text" id="feedbackName" class="form-control" required>
                                 <label for="feedbackName">Ваше имя</label>
+                                <div class="invalid-feedback">
+                                    поле не должно быть пустым
+                                </div>
                             </div>
 
                             <div class="md-form">
-                                <input type="text" id="feedbackPhone" class="form-control">
+                                <input type="text" id="feedbackPhone" class="form-control" required>
                                 <label for="feedbackPhone">Ваш телефон</label>
+                                <div class="invalid-feedback">
+                                    поле не должно быть пустым
+                                </div>
                             </div>
 
                             <div class="md-form">
-                                <input type="text" id="feedbackChildAge" class="form-control">
+                                <input type="number" id="feedbackChildAge" min="1" max="17" class="form-control" required>
                                 <label for="feedbackChildAge">Возраст ребенка</label>
+                                <div class="invalid-feedback">
+                                    поле не должно быть пустым
+                                </div>
                             </div>
 
                             <button class="btn  btn-rounded btn-block my-4 waves-effect z-depth-0 feedbackSubmit" type="submit">записаться на прием</button>
                         </div>
 
-                        <!-- btn-outline-primary -->
                     </form>
 
 
@@ -1121,6 +1151,44 @@
                 <img src="/images/webrocket-logo-black.png" alt="" class="footer-content-design-logo">
             </div>
         </div>
+    </div>
+
+    <div class="feedback__popup">
+
+        <form action="" method="post" class="feedback__popup--form content__contact-col--feedback needs-validation" novalidate>
+            <p class="content__contact-col--feedback--title">ЗАПИШИТЕСЬ НА ПРИЕМ</p>
+
+            <div class="content__contact-col--feedback--inputs">
+
+                <div class="md-form">
+                    <input type="text" id="feedback_popup_Name" class="form-control" required>
+                    <label for="feedback_popup_Name">Ваше имя</label>
+                    <div class="invalid-feedback">
+                        поле не должно быть пустым
+                    </div>
+                </div>
+
+                <div class="md-form">
+                    <input type="text" id="feedback_popup_Phone" class="form-control" required>
+                    <label for="feedback_popup_Phone">Ваш телефон</label>
+                    <div class="invalid-feedback">
+                        поле не должно быть пустым
+                    </div>
+                </div>
+
+                <div class="md-form">
+                    <input type="number" id="feedback_popup_ChildAge" min="1" max="17" class="form-control" required>
+                    <label for="feedback_popup_ChildAge">Возраст ребенка</label>
+                    <div class="invalid-feedback">
+                        поле не должно быть пустым
+                    </div>
+                </div>
+
+                <button class="btn  btn-rounded btn-block my-4 waves-effect z-depth-0 feedbackSubmit" type="submit">записаться на прием</button>
+            </div>
+
+        </form>
+
     </div>
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.6/js/mdb.min.js"></script>

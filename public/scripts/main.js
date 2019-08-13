@@ -1,9 +1,29 @@
+(function() {
+    'use strict';
+    window.addEventListener('load', function() {
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.getElementsByClassName('needs-validation');
+        // Loop over them and prevent submission
+        var validation = Array.prototype.filter.call(forms, function(form) {
+            form.addEventListener('submit', function(event) {
+                if (form.checkValidity() === false) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+                form.classList.add('was-validated');
+            }, false);
+        });
+    }, false);
+})();
+
 $(document).ready(function() {
     //const form = $(".content__contact-col--feedback");
+
+
     const resize_map = function() {
         //ширина и высота карты
-        var map = $('#map');
-        var container = $('.content__contact-col').width();
+        const map = $('#map');
+        const container = $('.content__contact-col').width();
 
         map.width(container * (container > 991 ? 0.5 : 0.95));
         //map.height(container * (container > 991 ? 0.28375 : 0.5));
@@ -51,7 +71,7 @@ $(document).ready(function() {
         });
         taganrog_map.geoObjects.add(mark);
     }
-    const carousel = function(carousel, next, prev, settings, slideToResponse, initialSlideResponse) {
+    const carousel = function(carousel, next, prev, imageItem, settings, slideToResponse, initialSlideResponse, speed) {
         const container = $('.' + carousel);
         const n_arrow = $('.' + next);
         const p_arrow = $('.' + prev);
@@ -63,8 +83,10 @@ $(document).ready(function() {
             variableWidth: settings.variableWidth,
             arrows: false,
             infinite: true,
-            //autoplay: true,
-            //autoplaySpeed: 3000,
+            initialSlide: initialSlideResponse.slide_default,
+            pauseOnHover: true,
+            autoplay: true,
+            autoplaySpeed: speed,
             //adaptiveHeight: true,
             responsive: [{
                     breakpoint: 1200,
@@ -108,6 +130,24 @@ $(document).ready(function() {
             e.preventDefault();
             container.slick('slickPrev');
         });
+
+
+        if (imageItem !== '') {
+
+            const body = $('body')[0];
+
+            $('.' + carousel).slickLightbox().on({
+                'show.slickLightbox': () => { body.style.overflow = "hidden"; },
+                'hide.slickLightbox': () => { body.style.overflow = "auto"; }
+            });
+
+
+            $('.' + carousel).slickLightbox({
+                src: 'src',
+                itemSelector: imageItem,
+                arrows: false
+            });
+        }
     };
 
 
@@ -115,12 +155,17 @@ $(document).ready(function() {
     $(window).resize(function() {
         resize_map();
     });
+    resize_map();
 
+    $('#feedbackPhone').mask("+7 (999) 999-99-99");
+    $('#feedback_popup_Phone').mask("+7 (999) 999-99-99");
+    var popupButtons = $('.show__feedback');
+    var popupForm = $('.feedback__popup');
 
 
     ymaps.ready(ymaps_init);
     //карусели
-    carousel('content__qa--slider-carousel', 'content__qa--slider-next', 'content__qa--slider-prev', {
+    carousel('content__qa--slider-carousel', 'content__qa--slider-next', 'content__qa--slider-prev', '', {
         centerMode: false,
         variableWidth: false,
         slideScroll: 1
@@ -136,8 +181,8 @@ $(document).ready(function() {
         slide_md: 0,
         slide_sm: 0,
         slide_xs: 0,
-    });
-    carousel('content__office--slider-carousel', 'content__office--slider-next', 'content__office--slider-prev', {
+    }, 5000);
+    carousel('content__office--slider-carousel', 'content__office--slider-next', 'content__office--slider-prev', '.content__office--slider-slide .content__office--slider-slide--container img', {
         centerMode: false,
         variableWidth: false,
         slideScroll: 1
@@ -153,8 +198,8 @@ $(document).ready(function() {
         slide_md: 0,
         slide_sm: 0,
         slide_xs: 0,
-    });
-    carousel('content__licenses--slider-carousel', 'content__licenses--slider-next', 'content__licenses--slider-prev', {
+    }, 3000);
+    carousel('content__licenses--slider-carousel', 'content__licenses--slider-next', 'content__licenses--slider-prev', '.content__licenses--slider-slide .content__licenses--slider-slide-container img', {
         centerMode: true,
         variableWidth: true,
         slideScroll: 1
@@ -165,12 +210,12 @@ $(document).ready(function() {
         slideShow_sm: 1,
         slideShow_xs: 1,
     }, {
-        slide_default: 0,
-        slide_lg: 0,
+        slide_default: 2,
+        slide_lg: 2,
         slide_md: -1,
         slide_sm: -1,
         slide_xs: -1,
-    });
+    }, 4000);
 
 
 
@@ -188,4 +233,4 @@ $(document).ready(function() {
 
 
 
-});
+})

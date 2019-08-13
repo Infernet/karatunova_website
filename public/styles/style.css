@@ -204,7 +204,7 @@
       background-repeat: no-repeat;
       background-size: contain;
       background-position: center;
-      width: 30.5%; }
+      width: 400px; }
       @media (max-width: 1199.98px) {
         .content__achievement-bg-left {
           background-size: 150%;
@@ -215,17 +215,17 @@
         .content__achievement-bg-left {
           display: none; } }
     .content__achievement-bg-right {
-      margin-left: -10.8%;
+      margin-left: -14%;
       display: flex;
       align-items: center;
       background-image: url("/images/achievement-bg-right.png");
       background-repeat: no-repeat;
       background-size: contain;
       background-position: center;
-      width: 23.7%; }
+      width: 400px; }
       @media (max-width: 1199.98px) {
         .content__achievement-bg-right {
-          background-size: 250%;
+          background-size: 150%;
           background-position: 100% center;
           margin-left: -7.8%; } }
       @media (max-width: 991.98px) {
@@ -390,7 +390,8 @@
         .content__services--item {
           width: 100%; }
           .content__services--item svg {
-            width: 110px; } }
+            width: 110px;
+            height: auto; } }
       .content__services--item-text {
         font-family: Ubuntu;
         font-size: 25px;
@@ -560,20 +561,13 @@
             width: 80%; } }
       .content__qa--slider-wrapper {
         width: 619px;
-        height: 700px !important;
+        height: auto !important;
         margin: 0 25px; }
-        @media (max-width: 1199.98px) {
-          .content__qa--slider-wrapper {
-            height: 650px !important; } }
-        @media (max-width: 991.98px) {
-          .content__qa--slider-wrapper {
-            height: 600px !important; } }
         @media (max-width: 767.98px) {
           .content__qa--slider-wrapper {
             margin: 0 15px; } }
         @media (max-width: 400px) {
           .content__qa--slider-wrapper {
-            height: 500px !important;
             margin: 0 10px; } }
       .content__qa--slider-slide {
         display: flex;
@@ -741,7 +735,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin: 0 auto; }
+      margin: 0px auto 50px auto; }
       .content__licenses--header-title {
         font-family: Merriweather;
         font-size: 35px;
@@ -859,7 +853,7 @@
           text-align: center; }
           @media (max-width: 1199.98px) {
             .content__contact-col--phone--number {
-              font-size: 63px; } }
+              font-size: 60px; } }
           @media (max-width: 991.98px) {
             .content__contact-col--phone--number {
               font-size: 50px; } }
@@ -883,6 +877,9 @@
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center center; }
+        @media (max-width: 767.98px) {
+          .content__contact-col--feedback {
+            align-items: center; } }
         .content__contact-col--feedback--title {
           width: 100%;
           text-align: center;
@@ -891,14 +888,29 @@
           font-weight: bold;
           text-transform: uppercase;
           color: #193A5E; }
+          @media (max-width: 575.98px) {
+            .content__contact-col--feedback--title {
+              font-size: 20px; } }
         .content__contact-col--feedback--inputs div.md-form label {
           font-family: Ubuntu;
           font-size: 20px;
           color: #747474; }
+          @media (max-width: 575.98px) {
+            .content__contact-col--feedback--inputs div.md-form label {
+              font-size: 15px; } }
         .content__contact-col--feedback--inputs div.md-form input {
           font-family: Ubuntu;
           font-size: 20px;
           color: #747474; }
+          @media (max-width: 575.98px) {
+            .content__contact-col--feedback--inputs div.md-form input {
+              font-size: 15px; } }
+        .content__contact-col--feedback--inputs div.md-form .invalid-feedback {
+          font-family: Ubuntu;
+          font-size: 15px; }
+          @media (max-width: 575.98px) {
+            .content__contact-col--feedback--inputs div.md-form .invalid-feedback {
+              font-size: 10px; } }
         .content__contact-col--feedback--inputs .feedbackSubmit {
           padding-top: .7rem;
           padding-bottom: .7rem;
@@ -1027,3 +1039,57 @@
             margin: auto 8px auto 0; } }
       .footer-content-design-logo {
         width: inherit; }
+
+.feedback__popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: none;
+  align-items: center;
+  justify-content: center; }
+  .feedback__popup--form {
+    background-color: #47ABEA; }
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none; }
+
+input[type='number'] {
+  -moz-appearance: textfield; }
+
+.slick-track {
+  display: flex !important; }
+
+.md-form input[type=date]:focus:not([readonly]),
+.md-form input[type=datetime-local]:focus:not([readonly]),
+.md-form input[type=email]:focus:not([readonly]),
+.md-form input[type=number]:focus:not([readonly]),
+.md-form input[type=password]:focus:not([readonly]),
+.md-form input[type=search-md]:focus:not([readonly]),
+.md-form input[type=search]:focus:not([readonly]),
+.md-form input[type=tel]:focus:not([readonly]),
+.md-form input[type=text]:focus:not([readonly]),
+.md-form input[type=time]:focus:not([readonly]),
+.md-form input[type=url]:focus:not([readonly]),
+.md-form textarea.md-textarea:focus:not([readonly]) {
+  -webkit-box-shadow: 0 1px 0 0 #F06182 !important;
+  box-shadow: 0 1px 0 0 #F06182 !important;
+  border-bottom: 1px solid #F06182 !important; }
+
+.md-form input[type=date]:focus:not([readonly]) + label,
+.md-form input[type=datetime-local]:focus:not([readonly]) + label,
+.md-form input[type=email]:focus:not([readonly]) + label,
+.md-form input[type=number]:focus:not([readonly]) + label,
+.md-form input[type=password]:focus:not([readonly]) + label,
+.md-form input[type=search-md]:focus:not([readonly]) + label,
+.md-form input[type=search]:focus:not([readonly]) + label,
+.md-form input[type=tel]:focus:not([readonly]) + label,
+.md-form input[type=text]:focus:not([readonly]) + label,
+.md-form input[type=time]:focus:not([readonly]) + label,
+.md-form input[type=url]:focus:not([readonly]) + label,
+.md-form textarea.md-textarea:focus:not([readonly]) + label {
+  color: #F06182 !important; }
