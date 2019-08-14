@@ -746,14 +746,6 @@
         @media (max-width: 991.98px) {
           .content__licenses--header-title {
             font-size: 25px; } }
-      .content__licenses--header-text {
-        font-family: Ubuntu;
-        font-size: 25px;
-        color: #F06182;
-        text-align: center; }
-        @media (max-width: 991.98px) {
-          .content__licenses--header-text {
-            font-size: 15px; } }
     .content__licenses--slider {
       display: flex;
       flex-direction: row;
@@ -1051,8 +1043,33 @@
   display: none;
   align-items: center;
   justify-content: center; }
+  .feedback__popup .wrapper_col {
+    align-items: center;
+    justify-content: center;
+    margin: auto; }
   .feedback__popup--form {
-    background-color: #47ABEA; }
+    background-color: #f8f8f8;
+    border-radius: 25px;
+    padding: 0px 20px;
+    border-radius: 25px;
+    max-width: initial;
+    max-height: initial;
+    width: 50%;
+    padding: 50px;
+    height: auto; }
+    @media (max-width: 991.98px) {
+      .feedback__popup--form {
+        width: 70%;
+        padding: 15px 20px; } }
+    @media (max-width: 767.98px) {
+      .feedback__popup--form {
+        width: 100%; } }
+    .feedback__popup--form--close {
+      margin-left: auto;
+      font-size: 30px;
+      color: #747474; }
+      .feedback__popup--form--close:active:hover {
+        color: #464646; }
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {

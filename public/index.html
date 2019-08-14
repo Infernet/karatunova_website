@@ -1154,41 +1154,42 @@
     </div>
 
     <div class="feedback__popup">
+        <div class="wrapper_col">
+            <form action="" method="post" class="feedback__popup--form content__contact-col--feedback needs-validation" novalidate>
+                <i class="feedback__popup--form--close fa fa-times"></i>
+                <p class="content__contact-col--feedback--title">ЗАПИШИТЕСЬ НА ПРИЕМ</p>
 
-        <form action="" method="post" class="feedback__popup--form content__contact-col--feedback needs-validation" novalidate>
-            <p class="content__contact-col--feedback--title">ЗАПИШИТЕСЬ НА ПРИЕМ</p>
+                <div class="content__contact-col--feedback--inputs">
 
-            <div class="content__contact-col--feedback--inputs">
-
-                <div class="md-form">
-                    <input type="text" id="feedback_popup_Name" class="form-control" required>
-                    <label for="feedback_popup_Name">Ваше имя</label>
-                    <div class="invalid-feedback">
-                        поле не должно быть пустым
+                    <div class="md-form">
+                        <input type="text" id="feedback_popup_Name" class="form-control" required>
+                        <label for="feedback_popup_Name">Ваше имя</label>
+                        <div class="invalid-feedback">
+                            поле не должно быть пустым
+                        </div>
                     </div>
+
+                    <div class="md-form">
+                        <input type="text" id="feedback_popup_Phone" class="form-control" required>
+                        <label for="feedback_popup_Phone">Ваш телефон</label>
+                        <div class="invalid-feedback">
+                            поле не должно быть пустым
+                        </div>
+                    </div>
+
+                    <div class="md-form">
+                        <input type="number" id="feedback_popup_ChildAge" min="1" max="17" class="form-control" required>
+                        <label for="feedback_popup_ChildAge">Возраст ребенка</label>
+                        <div class="invalid-feedback">
+                            поле не должно быть пустым
+                        </div>
+                    </div>
+
+                    <button class="btn  btn-rounded btn-block my-4 waves-effect z-depth-0 feedbackSubmit" type="submit">записаться на прием</button>
                 </div>
 
-                <div class="md-form">
-                    <input type="text" id="feedback_popup_Phone" class="form-control" required>
-                    <label for="feedback_popup_Phone">Ваш телефон</label>
-                    <div class="invalid-feedback">
-                        поле не должно быть пустым
-                    </div>
-                </div>
-
-                <div class="md-form">
-                    <input type="number" id="feedback_popup_ChildAge" min="1" max="17" class="form-control" required>
-                    <label for="feedback_popup_ChildAge">Возраст ребенка</label>
-                    <div class="invalid-feedback">
-                        поле не должно быть пустым
-                    </div>
-                </div>
-
-                <button class="btn  btn-rounded btn-block my-4 waves-effect z-depth-0 feedbackSubmit" type="submit">записаться на прием</button>
-            </div>
-
-        </form>
-
+            </form>
+        </div>
     </div>
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.6/js/mdb.min.js"></script>

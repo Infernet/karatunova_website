@@ -17,9 +17,8 @@
 })();
 
 $(document).ready(function() {
-    //const form = $(".content__contact-col--feedback");
 
-
+    const body = $('body')[0];
     const resize_map = function() {
         //ширина и высота карты
         const map = $('#map');
@@ -134,7 +133,7 @@ $(document).ready(function() {
 
         if (imageItem !== '') {
 
-            const body = $('body')[0];
+
 
             $('.' + carousel).slickLightbox().on({
                 'show.slickLightbox': () => { body.style.overflow = "hidden"; },
@@ -159,8 +158,34 @@ $(document).ready(function() {
 
     $('#feedbackPhone').mask("+7 (999) 999-99-99");
     $('#feedback_popup_Phone').mask("+7 (999) 999-99-99");
-    var popupButtons = $('.show__feedback');
-    var popupForm = $('.feedback__popup');
+    $('.show__feedback').each((i, e) => {
+        e.addEventListener('click', () => {
+            popupForm[0].style.display = "flex";
+            body.style.overflow = "hidden";
+        });
+    });
+
+
+
+    const popupForm = $('.feedback__popup');
+
+    $('.feedback__popup--form--close')[0].addEventListener('click', () => {
+        popupForm.hide();
+        body.style.overflow = "auto";
+    });
+    $(popupForm).click(function(e) {
+        if (e.target == popupForm[0] || e.target == $(".feedback__popup > div.wrapper_col")[0]) {
+            $(popupForm).hide();
+            body.style.overflow = "auto";
+        }
+    });
+
+
+
+
+
+
+
 
 
     ymaps.ready(ymaps_init);
