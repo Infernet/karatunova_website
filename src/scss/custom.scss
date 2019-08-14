@@ -1,0 +1,1356 @@
+@mixin media-breakpoint-down-xsmall {
+    @media (max-width: 400px) {
+        @content;
+    }
+}
+
+.icon_r {
+    color: #F06182;
+}
+
+.icon_b {
+    color: #47ABEA;
+}
+
+.icon_g {
+    color: #89BE16;
+}
+
+.icon_w {
+    color: #fff;
+}
+
+.svg_r {
+    fill: #F06182;
+}
+
+.svg_b {
+    fill: #47ABEA;
+}
+
+.svg_g {
+    fill: #89BE16;
+}
+
+.svg_w {
+    fill: #fff;
+}
+
+.carousel--arrow {
+    margin: auto auto;
+    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.header {
+    background: {
+        image: url("../public/images/logo.png");
+        repeat: no-repeat;
+        size: cover;
+    }
+    width: 100%;
+    background-position: center center;
+    display: flex;
+    justify-content: center;
+    &-container {
+        max-width: 1600px;
+        width: 100%;
+        @include media-breakpoint-down(md) {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+    &__content {
+        display: flex;
+        flex-direction: column;
+        margin: 320px 7% 100px auto;
+        width: 900px;
+        @include media-breakpoint-down(md) {
+            margin: 30px 0;
+            width: auto;
+            max-width: 320px;
+        }
+        &-title {
+            font: {
+                family: Merriweather;
+                size: 57px;
+                weight: bold
+            }
+            color: #F06182;
+            text-align: center;
+            @include media-breakpoint-down(md) {
+                font-size: 35px;
+            }
+            @include media-breakpoint-down(xs) {
+                font-size: 30px;
+            }
+            @include media-breakpoint-down-xsmall() {
+                font-size: 27px;
+            }
+        }
+        &-description {
+            color: #193A5E;
+            text-align: center;
+            font: {
+                family: Ubuntu;
+                size: 70px;
+                weight: bold;
+            }
+            @include media-breakpoint-down(md) {
+                font-size: 37px;
+            }
+            @include media-breakpoint-down(xs) {
+                font-size: 30px;
+            }
+            @include media-breakpoint-down-xsmall() {
+                font-size: 27px;
+            }
+            &-first {
+                font: {
+                    family: Ubuntu;
+                    size: 50px;
+                    weight: bold;
+                }
+                @include media-breakpoint-down(md) {
+                    font-size: 27px;
+                    display: block;
+                }
+                @include media-breakpoint-down(xs) {
+                    font-size: 25px;
+                }
+                @include media-breakpoint-down-xsmall() {
+                    font-size: 22px;
+                }
+            }
+        }
+        &-btn {
+            background-color: #89BE16;
+            border-radius: 50px;
+            padding: 22px 64px;
+            margin: auto auto;
+            border: none;
+            font: {
+                family: Ubuntu;
+                size: 25px;
+            }
+            color:#FFFFFF;
+            @include media-breakpoint-down(md) {
+                padding: 15px 50px;
+                font-size: 16px;
+            }
+            @include media-breakpoint-down(xs) {
+                font-size: 13px;
+                padding: 15px 30px;
+            }
+        }
+    }
+}
+
+.content-border {
+    display: flex;
+    flex-direction: row;
+    &-g {
+        height: 10px;
+        width: 100%;
+        background-color: #89BE16;
+    }
+    &-b {
+        height: 10px;
+        width: 100%;
+        background-color: #47ABEA;
+    }
+    &-r {
+        height: 10px;
+        width: 100%;
+        background-color: #F06182;
+    }
+}
+
+.wrapper_row {
+    max-width: 1600px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.wrapper_col {
+    max-width: 1600px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    &__achievement {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: stretch;
+        background-color: #F8F8F8;
+        &-list {
+            display: flex;
+            flex-direction: row;
+            margin-left: -3%;
+            @include media-breakpoint-down(md) {
+                margin-left: 0;
+                flex-direction: column;
+                padding: 50px 30px 100px 30px;
+                background: {
+                    image: url("../public/images/achievement-bg-right.png");
+                    repeat: no-repeat;
+                    size: 50%;
+                    position: bottom right;
+                }
+            }
+            @include media-breakpoint-down(xs) {
+                padding: 50px 0px 100px 0px;
+            }
+            &--row {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                width: 50%;
+                margin: 69px 0px;
+                padding: 0 30px;
+                @include media-breakpoint-down(md) {
+                    width: 100%;
+                    margin: 0;
+                }
+                @include media-breakpoint-down-xsmall() {
+                    padding: 0 10px;
+                }
+            }
+        }
+        &-item {
+            display: flex;
+            flex-direction: row;
+            margin: auto 0px;
+            align-items: flex-start;
+            font: {
+                family: Ubuntu;
+                size: 20px;
+            }
+            text-align: left;
+            color: #404040;
+            line-height: 24px;
+            i {
+                color: #F06182;
+                margin-right: 8px;
+            }
+            @include media-breakpoint-down(md) {
+                margin: 10px 0;
+            }
+            @include media-breakpoint-down(xs) {
+                font-size: 15px;
+                align-items: baseline;
+            }
+        }
+        &-bg {
+            &-left {
+                margin-left: -10%;
+                margin-right: 15px;
+                background-image: url("../public/images/achievement-bg-left.png");
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: center;
+                width: 400px;
+                @include media-breakpoint-down(lg) {
+                    background: {
+                        size: 150%;
+                        position: 100% center;
+                    }
+                    margin-left: -7%;
+                    width: 34.7%;
+                }
+                @include media-breakpoint-down(md) {
+                    display: none;
+                }
+            }
+            &-right {
+                margin-left: -14%;
+                display: flex;
+                align-items: center;
+                background-image: url("../public/images/achievement-bg-right.png");
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: center;
+                width: 400px;
+                @include media-breakpoint-down(lg) {
+                    background: {
+                        size: 150%;
+                        position: 100% center;
+                    }
+                    margin-left:-7.8%;
+                }
+                @include media-breakpoint-down(md) {
+                    display: none;
+                }
+            }
+        }
+    }
+    &__description {
+        display: flex;
+        flex-direction: row;
+        background-image: url("../public/images/description-bg-tree.png");
+        background-repeat: no-repeat;
+        background-size: 40%;
+        justify-content: center;
+        @include media-breakpoint-down(md) {
+            .wrapper_row {
+                flex-direction: column;
+            }
+            background-size: contain;
+        }
+        &--content {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: space-around;
+            margin: 20px;
+            @include media-breakpoint-down(md) {
+                margin: 0 0 20px 0;
+            }
+            &-text {
+                display: flex;
+                flex-direction: column;
+                margin: 50px 50px 0px 50px;
+                @include media-breakpoint-down(md) {
+                    margin: 20% 50px 0 50px;
+                }
+                @include media-breakpoint-down(sm) {
+                    margin: 20% 20px 0 20px;
+                }
+                &--title {
+                    font: {
+                        family: Merriweather;
+                        size: 35px;
+                        weight: bold;
+                    }
+                    color:#193A5E;
+                    @include media-breakpoint-down(xs) {
+                        font-size: 30px;
+                    }
+                    @include media-breakpoint-down-xsmall() {
+                        font-size: 25px;
+                    }
+                }
+                &--profession {
+                    font: {
+                        family: Ubuntu;
+                        size: 25px;
+                        weight: medium;
+                    }
+                    color: #F06182;
+                    @include media-breakpoint-down(xs) {
+                        font-size: 20px;
+                    }
+                    @include media-breakpoint-down-xsmall() {
+                        font-size: 15px;
+                    }
+                }
+                &--description {
+                    font: {
+                        family: Ubuntu;
+                        size: 20px;
+                    }
+                    color:#404040;
+                    @include media-breakpoint-down(xs) {
+                        font-size: 15px;
+                    }
+                    @include media-breakpoint-down-xsmall() {
+                        font-size: 10px;
+                    }
+                }
+            }
+            &--btn {
+                background-color: #89BE16;
+                border-radius: 50px;
+                padding: 22px 64px;
+                margin-left: 50px;
+                border: none;
+                font-family: Ubuntu;
+                font-size: 25px;
+                color: #FFFFFF;
+                @include media-breakpoint-down(md) {
+                    margin: 20px auto 10px auto;
+                }
+                @include media-breakpoint-down(xs) {
+                    font-size: 20px;
+                }
+                @include media-breakpoint-down-xsmall() {
+                    font-size: 15px;
+                    padding: 20px 40px;
+                }
+            }
+        }
+        &--photo {
+            width: 100%;
+            display: flex;
+            margin: 0px 20px;
+            align-items: center;
+            justify-content: center;
+            img {
+                width: 100%;
+            }
+            @include media-breakpoint-down(md) {
+                margin: 0;
+            }
+        }
+    }
+    &__services {
+        background: {
+            image: url("../public/images/services-bg.png");
+            repeat: no-repeat;
+            color: #F7FAFF;
+            size: contain;
+        }
+        @media (max-width: 1600px) {
+            & {
+                background-size: cover;
+            }
+        }
+        display: flex;
+        align-items:center;
+        justify-content: center;
+        @include media-breakpoint-only(lg) {
+            background-size: cover;
+        }
+        @include media-breakpoint-down(md) {
+            background-image: none;
+        }
+        &--container {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            margin: 50px auto 50px auto;
+            @include media-breakpoint-only(lg) {
+                margin: 50px 50px 50px 100px;
+            }
+            @include media-breakpoint-down(md) {
+                margin: 50px auto;
+            }
+            @include media-breakpoint-down(xs) {
+                margin: 50px 10px;
+            }
+        }
+        &--row {
+            display: flex;
+            flex-direction: row;
+            margin: 25px 10px 25px 0px;
+            @include media-breakpoint-down(md) {
+                margin: 0;
+                flex-direction: column;
+                align-items: center;
+            }
+            &-1 {
+                div:nth-child(1) {
+                    margin-left: 3.5%;
+                    margin-right: 8%;
+                    @include media-breakpoint-down(md) {
+                        margin: 0;
+                    }
+                }
+            }
+            &-2 {
+                div:nth-child(1) {
+                    margin-left: 8.5%;
+                    margin-right: 11%;
+                    @include media-breakpoint-down(md) {
+                        margin: 0;
+                    }
+                }
+            }
+            &-3 {
+                div:nth-child(1) {
+                    margin-right: 17%;
+                    @include media-breakpoint-down(md) {
+                        margin: 0;
+                    }
+                }
+            }
+        }
+        &--item {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            @include media-breakpoint-down(md) {
+                width: 100%;
+                svg {
+                    width: 110px;
+                    height: auto;
+                }
+            }
+            &-icon {}
+            &-text {
+                font: {
+                    family: Ubuntu;
+                    size: 25px;
+                }
+                max-width: 423px;
+                margin-left: -20px;
+                color:#193A5E;
+                @media (max-width:1200px) {
+                    & {
+                        font-size: 20px;
+                    }
+                }
+                @include media-breakpoint-down(md) {
+                    font-size: 20px;
+                    margin-left: 0;
+                }
+                @include media-breakpoint-down(xs) {
+                    font-size: 15px;
+                    max-width: none;
+                    width: 100%;
+                }
+            }
+            &__row {
+                &-1 {
+                    padding-left: 80px;
+                }
+                &-2 {
+                    padding-left: 20px;
+                }
+                &-3 {
+                    padding-left: -60px;
+                }
+            }
+        }
+    }
+    &__office {
+        display: flex;
+        flex-direction: column;
+        padding: 70px 0;
+        align-items: center;
+        background: {
+            image: url("../public/images/office-body-bg.png");
+            repeat: no-repeat;
+            position: 0% -10%;
+        }
+        @include media-breakpoint-down(md) {
+            background-image: none;
+            padding: 0;
+        }
+        &--header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0 auto;
+            background-image: url("../public/images/office-title-bg.png");
+            background-repeat: no-repeat;
+            background-position: 35% 0%;
+            @include media-breakpoint-down(md) {
+                margin: 0;
+                background-position: 45% 20%;
+                padding: 50px 0 30px 0;
+            }
+            @include media-breakpoint-down-xsmall() {
+                background-position: 0% 0%;
+                padding: 50px 5px 30px 5px;
+            }
+            &-title {
+                font: {
+                    family: Merriweather;
+                    size: 35px;
+                    weight: bold;
+                }
+                color:#193A5E;
+                @include media-breakpoint-down(md) {
+                    font-size: 20px;
+                }
+                text: {
+                    transform: uppercase;
+                    align: center;
+                }
+            }
+            &-text {
+                font: {
+                    family: Ubuntu;
+                    size: 25px;
+                }
+                color:#F06182;
+                text-align: center;
+                @include media-breakpoint-down(md) {
+                    font-size: 15px;
+                }
+            }
+        }
+        &--slider {
+            display: flex;
+            flex-direction: row;
+            height: 100%;
+            justify-content: space-between;
+            @include media-breakpoint-down(md) {
+                padding-bottom: 50px;
+            }
+            &-carousel {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-evenly;
+                align-items: center;
+                width: 80%;
+            }
+            &-slide {
+                width: 398px;
+                height: 398px;
+                &--container {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    img {
+                        width: 80%;
+                    }
+                }
+            }
+        }
+    }
+    &__qa {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: {
+            image: url("../public/images/qa-bg.png");
+            size: cover;
+            repeat: no-repeat;
+        }
+        .wrapper_col {
+            padding: 70px 0;
+        }
+        &--header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0 auto;
+            &-title {
+                font: {
+                    family: Merriweather;
+                    size: 35px;
+                    weight: bold;
+                }
+                color:#193A5E;
+                text: {
+                    transform: uppercase;
+                    align: center;
+                }
+                @include media-breakpoint-down(md) {
+                    font-size: 30px;
+                }
+                @include media-breakpoint-down(sm) {
+                    font-size: 25px;
+                }
+            }
+            &-text {
+                font: {
+                    family: Ubuntu;
+                    size: 25px;
+                }
+                color:#F06182;
+                text-align: center;
+                @include media-breakpoint-down(md) {
+                    font-size: 20px;
+                }
+                @include media-breakpoint-down(sm) {
+                    font-size: 15px;
+                }
+            }
+        }
+        &--slider {
+            display: flex;
+            flex-direction: row;
+            height: 100%;
+            justify-content: center;
+            align-content: center;
+            margin-bottom: -250px;
+            @include media-breakpoint-down(md) {
+                margin-bottom: 50px;
+            }
+            &-carousel {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: flex-start;
+                width: 70%;
+                @include media-breakpoint-down(md) {
+                    width: 80%;
+                }
+            }
+            &-wrapper {
+                width: 619px;
+                height: auto !important;
+                margin: 0 25px;
+                @include media-breakpoint-down(sm) {
+                    margin: 0 15px;
+                }
+                @include media-breakpoint-down-xsmall() {
+                    margin: 0 10px;
+                }
+            }
+            &-slide {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                height: 100%;
+                &--content {
+                    background-color: #FFFFFF;
+                    height: 100%;
+                    padding: 30px 48px 0px 48px;
+                    @include media-breakpoint-down(xs) {
+                        padding: 15px 15px 0px 15px;
+                    }
+                }
+                &--title {
+                    font: {
+                        family: Ubuntu;
+                        size: 20px;
+                    }
+                    text-align: left;
+                    color:#193A5E;
+                    @include media-breakpoint-down(lg) {
+                        font-size: 18px;
+                    }
+                    @include media-breakpoint-down(md) {
+                        font-size: 20px;
+                    }
+                    @include media-breakpoint-down(sm) {
+                        font-size: 18px;
+                    }
+                    @include media-breakpoint-down-xsmall() {
+                        font-size: 15px;
+                    }
+                }
+                &--circle {
+                    @include media-breakpoint-down(md) {
+                        font-size: 15px;
+                    }
+                    @include media-breakpoint-down(sm) {
+                        font-size: 10px;
+                    }
+                    @include media-breakpoint-down-xsmall() {
+                        font-size: 7px;
+                    }
+                }
+                &--description {
+                    font: {
+                        family: Ubuntu;
+                        size: 18px;
+                    }
+                    text-align: left;
+                    color:#404040;
+                    @include media-breakpoint-down(lg) {
+                        font-size: 15px;
+                    }
+                    @include media-breakpoint-down(md) {
+                        font-size: 18px;
+                    }
+                    @include media-breakpoint-down(sm) {
+                        font-size: 15px;
+                    }
+                    @include media-breakpoint-down-xsmall() {
+                        font-size: 13px;
+                    }
+                }
+                &--shadow {
+                    background: {
+                        image: url("../public/images/qa-shadow.png");
+                        size: cover;
+                        repeat: no-repeat;
+                    }
+                    min-height: 5px;
+                    width: 100%;
+                    margin-top: auto;
+                }
+            }
+        }
+    }
+    &__quote {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        //height: 600px;
+        padding-top: 250px;
+        background: {
+            image: url("../public/images/quote-bg.png");
+            //size: cover;
+            repeat: no-repeat;
+            position: 100% 25%;
+        }
+        @include media-breakpoint-down(md) {
+            margin-top: -50px;
+            padding-top: 0;
+            background-image: none;
+        }
+        .wrapper_row {
+            @include media-breakpoint-down(md) {
+                flex-direction: column-reverse;
+            }
+        }
+        &--photo {
+            margin-left: auto;
+            width: auto !important;
+            @include media-breakpoint-down(md) {
+                margin: -60px auto 0px auto;
+            }
+            @include media-breakpoint-down(xs) {
+                width: 100% !important;
+            }
+        }
+        &--quote {
+            display: flex;
+            flex-direction: column;
+            margin: auto auto;
+            max-width: 40%;
+            @include media-breakpoint-down(md) {
+                max-width: 80%;
+                margin: auto auto;
+            }
+            @include media-breakpoint-down-xsmall() {
+                max-width: 90%;
+            }
+            &-title {
+                font: {
+                    family: Ubuntu;
+                    size: 20px;
+                }
+                color:#F06182;
+                text-align:left;
+                @include media-breakpoint-down(lg) {
+                    font-size: 18px;
+                }
+                @include media-breakpoint-down(md) {
+                    display: flex;
+                    flex-direction: row;
+                    font-size: 15px;
+                    div {
+                        margin-right: 10px;
+                    }
+                }
+                @include media-breakpoint-down-xsmall() {
+                    font-size: 13px;
+                }
+            }
+            &-description {
+                font: {
+                    family: Ubuntu;
+                    size: 25px;
+                    weight: medium;
+                }
+                color:#193A5E;
+                text-align: left;
+                @include media-breakpoint-down(lg) {
+                    font-size: 20px;
+                }
+                @include media-breakpoint-down(md) {
+                    font: {
+                        size: 15px;
+                        weight: 500;
+                    }
+                }
+            }
+        }
+    }
+    &__licenses {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        //height: 605px;
+        @include media-breakpoint-down(md) {
+            margin-bottom: -100px;
+        }
+        background: {
+            image: url("../public/images/qa-bg.png");
+            size: cover;
+            repeat: no-repeat;
+        }
+        .wrapper_col {
+            padding: 70px 0;
+            @include media-breakpoint-down(md) {
+                padding: 30px 0px 100px 0px;
+            }
+        }
+        &--header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            //margin: 0 auto;
+            margin: 0px auto 50px auto;
+            &-title {
+                font: {
+                    family: Merriweather;
+                    size: 35px;
+                    weight: bold;
+                }
+                text-transform: uppercase;
+                color:#193A5E;
+                text-align: center;
+                @include media-breakpoint-down(md) {
+                    font-size: 25px;
+                }
+            }
+            // &-text {
+            //     font: {
+            //         family: Ubuntu;
+            //         size: 25px;
+            //     }
+            //     color:#F06182;
+            //     text-align: center;
+            //     @include media-breakpoint-down(md) {
+            //         font-size: 15px;
+            //     }
+            // }
+        }
+        &--slider {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            margin-bottom: -200px;
+            @include media-breakpoint-down(md) {
+                margin-bottom: 0;
+            }
+            &-carousel {
+                display: flex;
+                flex-direction: row;
+                //background-color: #47ABEA;
+                justify-content: space-evenly;
+                align-items: flex-start;
+                width: 70%;
+                @include media-breakpoint-down(md) {
+                    width: 80%;
+                }
+            }
+            &-slide {
+                margin: auto 20px;
+                &-container {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                }
+                img {
+                    margin: 0 auto;
+                    max-width: 100%;
+                    max-height: 300px;
+                }
+            }
+        }
+    }
+    &__contact {
+        display: flex;
+        flex-direction: row;
+        //align-items: center;
+        //height: 790px;
+        justify-content: center;
+        margin: 250px 0 50px 0;
+        background: url("../public/images/office-title-bg.png") no-repeat 5% 0%, url("../public/images/achievement-bg-right.png") no-repeat 100% 0%;
+        .wrapper_row {
+            justify-content: space-evenly;
+            @include media-breakpoint-down(md) {
+                flex-direction: column;
+            }
+        }
+        @include media-breakpoint-down(md) {
+            margin-top: 0;
+            padding-top: 100px;
+            background: url("../public/images/office-title-bg.png") no-repeat 20% 5%;
+        }
+        @include media-breakpoint-down-xsmall() {
+            background-position: 0% 6%;
+        }
+        &-col {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            margin: 0 8px;
+            width: 50%;
+            @include media-breakpoint-down(md) {
+                margin: 50px 0;
+                width: 100%;
+            }
+            &--phone {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                &--title {
+                    font: {
+                        family: Ubuntu;
+                        size: 25px;
+                        weight: bold;
+                    }
+                    color:#193A5E;
+                    text-align: center;
+                    @include media-breakpoint-down(lg) {
+                        font-size: 23px;
+                    }
+                    @include media-breakpoint-down(md) {
+                        font-size: 20px;
+                        //margin: 0 auto;
+                    }
+                    @include media-breakpoint-down(xs) {
+                        font-size: 15px;
+                    }
+                }
+                &--number {
+                    font: {
+                        family: Ubuntu;
+                        size: 70px;
+                        weight: bold;
+                    }
+                    color:#F06182;
+                    text-align: center;
+                    @include media-breakpoint-down(lg) {
+                        font-size: 60px;
+                    }
+                    @include media-breakpoint-down(md) {
+                        font-size: 50px;
+                        //margin: 0 auto;
+                    }
+                    @include media-breakpoint-down(xs) {
+                        font-size: 40px
+                    }
+                    @include media-breakpoint-down-xsmall() {
+                        font-size: 30px;
+                    }
+                }
+            }
+            &--feedback {
+                width: 100%;
+                height: calc(1600px* 0.28375);
+                max-width: 674px;
+                max-height: 454px;
+                display: flex;
+                flex-direction: column;
+                padding: 10px;
+                align-items: flex-start;
+                justify-content: space-evenly;
+                background: {
+                    image: url("../public/images/form-bg.png");
+                    repeat: no-repeat;
+                    size: cover;
+                    position: center center;
+                }
+                @include media-breakpoint-down(sm) {
+                    align-items: center;
+                }
+                &--title {
+                    width: 100%;
+                    text-align: center;
+                    font: {
+                        family: Merriweather;
+                        size: 35px;
+                        weight: bold;
+                    }
+                    text-transform: uppercase;
+                    color: #193A5E;
+                    @include media-breakpoint-down(xs) {
+                        font-size: 20px;
+                    }
+                }
+                &--inputs {
+                    div.md-form {
+                        label {
+                            font: {
+                                family: Ubuntu;
+                                size: 20px;
+                            }
+                            color:#747474;
+                            @include media-breakpoint-down(xs) {
+                                font-size: 15px;
+                            }
+                        }
+                        input {
+                            font: {
+                                family: Ubuntu;
+                                size: 20px;
+                            }
+                            color:#747474;
+                            @include media-breakpoint-down(xs) {
+                                font-size: 15px;
+                            }
+                        }
+                        .invalid-feedback {
+                            font: {
+                                family: Ubuntu;
+                                size: 15px;
+                            }
+                            @include media-breakpoint-down(xs) {
+                                font-size: 10px;
+                            }
+                        }
+                    }
+                    .feedbackSubmit {
+                        padding-top: .7rem;
+                        padding-bottom: .7rem;
+                        border: 2px solid #F06182!important;
+                        background-color: #f06182!important;
+                        border-radius: 50px;
+                        color: #fff!important;
+                    }
+                }
+            }
+            &--adress {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                //justify-content: space-between;
+                &--title {
+                    font: {
+                        family: Ubuntu;
+                        size: 25px;
+                        weight: bold;
+                    }
+                    color:#193A5E;
+                    text-align: center;
+                    text-transform: uppercase;
+                    @include media-breakpoint-down(lg) {
+                        font-size: 23px;
+                    }
+                    @include media-breakpoint-down(md) {
+                        font-size: 20px;
+                    }
+                    @include media-breakpoint-down(xs) {
+                        font-size: 15px;
+                    }
+                }
+                &--adress {
+                    font: {
+                        family: Ubuntu;
+                        size: 20px;
+                        weight: medium;
+                    }
+                    color:#89BE16;
+                    text-align: center;
+                    text-transform: uppercase;
+                    @include media-breakpoint-down(lg) {
+                        font-size: 18px;
+                    }
+                    @include media-breakpoint-down(md) {
+                        font-size: 15px;
+                    }
+                    @include media-breakpoint-down(xs) {
+                        font-size: 13px;
+                    }
+                }
+                &--description {
+                    font: {
+                        family: Ubuntu;
+                        size: 18px;
+                    }
+                    color:#89BE16;
+                    text-align: center;
+                    @include media-breakpoint-down(lg) {
+                        font-size: 15px;
+                    }
+                    @include media-breakpoint-down(md) {
+                        font-size: 12px;
+                    }
+                    @include media-breakpoint-down(xs) {
+                        font-size: 10px;
+                    }
+                }
+            }
+            &--ymap {
+                max-width: 674px;
+                max-height: 454px;
+            }
+        }
+    }
+}
+
+.footer {
+    width: 100%;
+    //height: 244px;
+    background-position: center center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: {
+        image: url("../public/images/footer-bg.png");
+        size: cover;
+        repeat: repeat-x;
+        position: center center;
+    }
+    @include media-breakpoint-down(md) {
+        background-size: cover;
+    }
+    &-content {
+        max-width: 1600px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 30px 0 15px 0;
+        &--name {
+            display: flex;
+            flex-direction: column;
+            margin: 10px 0;
+            &--title {
+                font: {
+                    family: Merriweather;
+                    size: 35px;
+                    weight: bold;
+                }
+                color:#193A5E;
+                text-align: center;
+                //margin-top: 20px;
+                @include media-breakpoint-down(lg) {
+                    font-size: 25px;
+                }
+                @include media-breakpoint-down(md) {
+                    font-size: 20px;
+                }
+            }
+            &--description {
+                font: {
+                    family: Ubuntu;
+                    size: 25px;
+                    weight: medium;
+                }
+                color:#F06182;
+                text-align: center;
+                //margin-bottom: auto;
+                @include media-breakpoint-down(lg) {
+                    font-size: 20px;
+                }
+                @include media-breakpoint-down(md) {
+                    font-size: 15px;
+                }
+            }
+        }
+        &-design {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            &-text {
+                font: {
+                    family: Roboto;
+                    size: 24px;
+                }
+                color:#000000;
+                text-align: center;
+                margin-right: 8px;
+                @include media-breakpoint-down(lg) {
+                    font-size: 18px;
+                }
+                @include media-breakpoint-down(md) {
+                    font-size: 14px;
+                    margin: auto 8px auto 0;
+                }
+            }
+            &-logo {
+                width: inherit;
+            }
+        }
+    }
+}
+
+.feedback__popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    .wrapper_col {
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+    }
+    &--form {
+        background-color: #f8f8f8;
+        border-radius: 25px;
+        padding: 0px 20px;
+        border-radius: 25px;
+        max-width: initial;
+        max-height: initial;
+        width: 50%;
+        padding: 50px;
+        height: auto;
+        @include media-breakpoint-down(md) {
+            width: 70%;
+            padding: 15px 20px;
+        }
+        @include media-breakpoint-down(sm) {
+            width: 100%;
+        }
+        &--close {
+            margin-left: auto;
+            font-size: 30px;
+            color: #747474;
+            &:active:hover {
+                color: #464646;
+            }
+        }
+    }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+input[type='number'] {
+    -moz-appearance: textfield;
+}
+
+.slick-track {
+    display: flex !important;
+}
+
+.slick-lightbox {
+    .slick-lightbox-close {
+        z-index: 9999;
+    }
+    .slick-prev {
+        z-index: 9999;
+    }
+    .slick-next {
+        z-index: 9999;
+    }
+}
+
+.md-form input[type=date]:focus:not([readonly]),
+.md-form input[type=datetime-local]:focus:not([readonly]),
+.md-form input[type=email]:focus:not([readonly]),
+.md-form input[type=number]:focus:not([readonly]),
+.md-form input[type=password]:focus:not([readonly]),
+.md-form input[type=search-md]:focus:not([readonly]),
+.md-form input[type=search]:focus:not([readonly]),
+.md-form input[type=tel]:focus:not([readonly]),
+.md-form input[type=text]:focus:not([readonly]),
+.md-form input[type=time]:focus:not([readonly]),
+.md-form input[type=url]:focus:not([readonly]),
+.md-form textarea.md-textarea:focus:not([readonly]) {
+    -webkit-box-shadow: 0 1px 0 0 #F06182 !important;
+    box-shadow: 0 1px 0 0 #F06182 !important;
+    border-bottom: 1px solid #F06182 !important;
+}
+
+.md-form input[type=date]:focus:not([readonly])+label,
+.md-form input[type=datetime-local]:focus:not([readonly])+label,
+.md-form input[type=email]:focus:not([readonly])+label,
+.md-form input[type=number]:focus:not([readonly])+label,
+.md-form input[type=password]:focus:not([readonly])+label,
+.md-form input[type=search-md]:focus:not([readonly])+label,
+.md-form input[type=search]:focus:not([readonly])+label,
+.md-form input[type=tel]:focus:not([readonly])+label,
+.md-form input[type=text]:focus:not([readonly])+label,
+.md-form input[type=time]:focus:not([readonly])+label,
+.md-form input[type=url]:focus:not([readonly])+label,
+.md-form textarea.md-textarea:focus:not([readonly])+label {
+    color: #F06182 !important;
+}
