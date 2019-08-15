@@ -10,63 +10,120 @@ import 'jquery-mask-plugin';
 import '../scss/index.scss';
 window.$ = window.jQuery = require("jquery");
 
-// Your jQuery code
-(function() {
-    'use strict';
-    window.addEventListener('load', function() {
-        // Fetch all the forms we want to apply custom Bootstrap validation styles to
-        var forms = document.getElementsByClassName('needs-validation');
-        // Loop over them and prevent submission
-        var validation = Array.prototype.filter.call(forms, function(form) {
-            form.addEventListener('submit', function(event) {
-                if (form.checkValidity() === false) {
-                    event.preventDefault();
-                    event.stopPropagation();
-                }
-                form.classList.add('was-validated');
-            }, false);
-        });
-    }, false);
-})();
+
 
 $(document).ready(
     function() {
-
-        const body = $('body')[0];
-        const resize_map = function() {
-            //ширина и высота карты
-            const map = $('#map');
-            const container = $('.content__contact-col').width();
-
-            map.width(container * (container > 991 ? 0.5 : 0.95));
-            //map.height(container * (container > 991 ? 0.28375 : 0.5));
-            //map.height(form.height());
-
-            //28.375
-        }
-        const ymaps_init = function() {
-
-            const taganrog_map = new ymaps.Map('map',
-                //Объект параметров карты
-                {
-                    //Координаты центра отображения
-                    //Координаты Таганрога
-                    center: [47.207431065786814, 38.92684255046906],
-                    //Масштаб карты
-                    zoom: 16,
-                    //тип покрытия карты
-                    type: 'yandex#map',
-                    controls: []
-                },
-                //Объект параметров карты
-                {
-                    // Свойство ограничивающее карту на Таганроге
-                    restrictMapArea: [
-                        [47.18079500197959, 38.80592122093851],
-                        [47.29793808190484, 38.96649420434565]
-                    ]
+        function checkInput(input, result) {
+            if (result) {
+                if (input.hasClass('is-invalid')) {
+                    input.toggleClass('is-invalid is-valid');
+                    return true;
+                } else {
+                    if (!input.hasClass('is-valid'))
+                        input.addClass('is-valid');
+                    return true;
                 }
-            );
+            } else {
+                if (input.hasClass('is-valid')) {
+                    input.toggleClass('is-valid is-invalid');
+                    return false;
+                } else {
+                    if (!input.hasClass('is-invalid'))
+                        input.addClass('is-invalid');
+                    return false;
+                }
+            }
+        };
+
+
+        function handlerForm(form, name, phone, childAge) {
+            const phoneReg = /\+7-\(\d{3}\)-\d{3}-\d{2}-\d{2}/;
+            const nameReg = /^[a-zA-Zа-яА-ЯёЁ'][a-zA-Z-а-яА-ЯёЁ' ]+[a-zA-Zа-яА-ЯёЁ']?$/;
+            const childAgeReg = /^([1][0-7]|[0]?[1-9])$/;
+
+            name.on('change', (e) => { checkInput($(e.currentTarget), e.currentTarget.value.match(nameReg)); });
+            phone.on('change', (e) => { checkInput($(e.currentTarget), e.currentTarget.value.match(phoneReg)); });
+            childAge.on('change', (e) => { checkInput($(e.currentTarget), e.currentTarget.value.match(childAgeReg)); });
+
+            form.on('submit', function(event) {
+                event.preventDefault();
+                if (
+                    checkInput(phone, phone.val().match(phoneReg)) &
+                    checkInput(name, name.val().match(nameReg)) &
+                    checkInput(childAge, childAge.val().match(childAgeReg))
+                ) {
+                    $.ajax({
+
+                        type: "POST",
+                        url: "../src/formHandler.php",
+                        data: form.serialize(),
+                        success: function(response) {
+                            //обработка ответа
+                            var result = JSON.parse(response);
+                            showPopupResult(result['sendToEmailStatus']);
+                        }
+                    });
+                }
+            });
+        }
+
+
+
+        handlerForm($('#contactForm'), $('#feedbackName'), $('#feedbackPhone'), $('#feedbackChildAge'));
+        handlerForm($('#popupForm'), $('#feedback_popup_Name'), $('#feedback_popup_Phone'), $('#feedback_popup_ChildAge'));
+
+        //часто используемые элементы
+        const body = $('body')[0];
+        const map = $('#map');
+        const container = $('.content__contact-col').width();
+        const popup = $('.feedback__popup');
+        const sendResult = $('.feedback__popup--result');
+        const formPopup = $('#popupForm');
+
+
+        function showPopupResult(result) {
+            popup[0].style.display = "flex";
+            body.style.overflow = "hidden";
+            formPopup[0].style.display = "none";
+            if (result) {
+                $('.result_success')[0].style.display = "block";
+                $('.result_failed')[0].style.display = "none";
+            } else {
+                $('.result_failed')[0].style.display = "block";
+                $('.result_success')[0].style.display = "none";
+            }
+            sendResult[0].style.display = "flex";
+
+            setTimeout(() => {
+                if (popup[0].style.display != "none") {
+                    popup.hide();
+                    body.style.overflow = "auto";
+                    formPopup[0].style.display = "flex";
+                    sendResult[0].style.display = "none";
+                }
+            }, 5000);
+        }
+
+
+        //ширина и высота карты
+        const resize_map = function() {
+                map.width(container * (container > 991 ? 0.5 : 0.95));
+            }
+            //ymaps api
+        const ymaps_init = function() {
+            const taganrog_map = new ymaps.Map('map', {
+                center: [47.207431065786814, 38.92684255046906],
+                zoom: 16,
+                type: 'yandex#map',
+                controls: []
+            }, {
+                // Свойство ограничивающее карту на Таганроге
+                restrictMapArea: [
+                    [47.18079500197959, 38.80592122093851],
+                    [47.29793808190484, 38.96649420434565]
+                ]
+            });
             var zoomControl = new ymaps.control.ZoomControl({
                 options: {
                     position: {
@@ -85,7 +142,7 @@ $(document).ready(
             taganrog_map.geoObjects.add(mark);
         }
 
-
+        //карусель
         const carousel = function(carousel, next, prev, imageItem, settings, slideToResponse, initialSlideResponse, speed) {
             const container = $('.' + carousel);
             const n_arrow = $('.' + next);
@@ -103,37 +160,31 @@ $(document).ready(
                 pauseOnHover: true,
                 autoplay: true,
                 autoplaySpeed: speed,
-                //adaptiveHeight: true,
                 responsive: [{
-                        breakpoint: 1200,
-                        settings: {
-                            slidesToShow: slideToResponse.slideShow_lg,
-                            initialSlide: initialSlideResponse.slide_lg
-                        }
-                    }, {
-                        breakpoint: 992,
-                        settings: {
-                            slidesToShow: slideToResponse.slideShow_md,
-                            initialSlide: initialSlideResponse.slide_md
-                        }
-                    }, {
-                        breakpoint: 768,
-                        settings: {
-                            slidesToShow: slideToResponse.slideShow_sm,
-                            initialSlide: initialSlideResponse.slide_sm
-                        }
-                    }, {
-                        breakpoint: 540,
-                        settings: {
-                            slidesToShow: slideToResponse.slideShow_xs,
-                            initialSlide: initialSlideResponse.slide_xs
-                        }
+                    breakpoint: 1200,
+                    settings: {
+                        slidesToShow: slideToResponse.slideShow_lg,
+                        initialSlide: initialSlideResponse.slide_lg
                     }
-                    // }, {
-                    //     breakpoint: 300,
-                    //     settings: "unslick"
-                    // }]
-                ]
+                }, {
+                    breakpoint: 992,
+                    settings: {
+                        slidesToShow: slideToResponse.slideShow_md,
+                        initialSlide: initialSlideResponse.slide_md
+                    }
+                }, {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: slideToResponse.slideShow_sm,
+                        initialSlide: initialSlideResponse.slide_sm
+                    }
+                }, {
+                    breakpoint: 540,
+                    settings: {
+                        slidesToShow: slideToResponse.slideShow_xs,
+                        initialSlide: initialSlideResponse.slide_xs
+                    }
+                }]
             });
 
 
@@ -149,7 +200,6 @@ $(document).ready(
 
 
             if (imageItem !== '') {
-
                 $('.' + carousel).slickLightbox({
                     src: 'src',
                     itemSelector: imageItem,
@@ -163,44 +213,39 @@ $(document).ready(
 
 
 
+        //адаптация размеров карты
         $(window).resize(function() {
             resize_map();
         });
         resize_map();
-
-        $('#feedbackPhone').mask("+7 (000) 000-00-00");
-        $('#feedback_popup_Phone').mask("+7 (999) 999-99-99");
+        ymaps.ready(ymaps_init);
+        //маска на поля ввода телефона
+        $('#feedbackPhone').mask("+7-(000)-000-00-00");
+        $('#feedback_popup_Phone').mask("+7-(000)-000-00-00");
+        //открытие popup
         $('.show__feedback').each((i, e) => {
             e.addEventListener('click', () => {
-                popupForm[0].style.display = "flex";
+                popup[0].style.display = "flex";
                 body.style.overflow = "hidden";
+                formPopup[0].style.display = "flex";
+                sendResult[0].style.display = "none";
             });
         });
 
-
-
-        const popupForm = $('.feedback__popup');
-
-        $('.feedback__popup--form--close')[0].addEventListener('click', () => {
-            popupForm.hide();
-            body.style.overflow = "auto";
+        //закрытие popup
+        $('.feedback__popup--form--close').each((i, e) => {
+            e.addEventListener('click', () => {
+                popup.hide();
+                body.style.overflow = "auto";
+            });
         });
-        $(popupForm).click(function(e) {
-            if (e.target == popupForm[0] || e.target == $(".feedback__popup > div.wrapper_col")[0]) {
-                $(popupForm).hide();
+        $(popup).click(function(e) {
+            if (e.target == popup[0] || e.target == $(".feedback__popup > div.wrapper_col")[0]) {
+                $(popup).hide();
                 body.style.overflow = "auto";
             }
         });
 
-
-
-
-
-
-
-
-
-        ymaps.ready(ymaps_init);
         //карусели
         carousel('content__qa--slider-carousel', 'content__qa--slider-next', 'content__qa--slider-prev', '', {
             centerMode: false,
@@ -254,4 +299,10 @@ $(document).ready(
             slide_xs: -1,
         }, 4000);
 
-    })
+
+
+
+
+
+
+    });
