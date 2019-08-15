@@ -53,17 +53,18 @@ $(document).ready(
                     checkInput(name, name.val().match(nameReg)) &
                     checkInput(childAge, childAge.val().match(childAgeReg))
                 ) {
-                    $.ajax({
+                    showPopupResult(false);
+                    // $.ajax({
 
-                        type: "POST",
-                        url: "../src/formHandler.php",
-                        data: form.serialize(),
-                        success: function(response) {
-                            //обработка ответа
-                            var result = JSON.parse(response);
-                            showPopupResult(result['sendToEmailStatus']);
-                        }
-                    });
+                    //     type: "POST",
+                    //     url: "../src/formHandler.php",
+                    //     data: form.serialize(),
+                    //     success: function(response) {
+                    //         //обработка ответа
+                    //         var result = JSON.parse(response);
+                    //         showPopupResult(result['sendToEmailStatus']);
+                    //     }
+                    // });
                 }
             });
         }
@@ -79,6 +80,7 @@ $(document).ready(
         const container = $('.content__contact-col').width();
         const popup = $('.feedback__popup');
         const sendResult = $('.feedback__popup--result');
+        const popupContent = $('.feedback__popup--result')[0].children[1].children[0];
         const formPopup = $('#popupForm');
 
 
@@ -86,12 +88,13 @@ $(document).ready(
             popup[0].style.display = "flex";
             body.style.overflow = "hidden";
             formPopup[0].style.display = "none";
+            popupContent.className = "";
             if (result) {
-                $('.result_success')[0].style.display = "block";
-                $('.result_failed')[0].style.display = "none";
+                $(popupContent).addClass('result_success');
+                popupContent.textContent = "Ваша заявка успешно отправлена.";
             } else {
-                $('.result_failed')[0].style.display = "block";
-                $('.result_success')[0].style.display = "none";
+                $(popupContent).addClass('result_failed');
+                popupContent.textContent = "Упс, что-то пошло не так. Проверьте правильность введенных данных или повторите попытку позже.";
             }
             sendResult[0].style.display = "flex";
 

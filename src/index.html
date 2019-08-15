@@ -1050,14 +1050,13 @@
                     </div>
 
 
-
                     <form method="POST" action="" id="contactForm" class="content__contact-col--feedback" novalidate>
                         <p class="content__contact-col--feedback--title">ЗАПИШИТЕСЬ НА ПРИЕМ</p>
 
                         <div class="content__contact-col--feedback--inputs">
 
                             <div class="md-form">
-                                <input type="text" name="name" id="feedbackName" class="form-control" maxlength="20" required>
+                                <input type="text" autocomplete="off" name="name" id="feedbackName" class="form-control" maxlength="20" required>
                                 <label for="feedbackName">Ваше имя</label>
                                 <div class="invalid-feedback">
                                     поле не должно быть пустым
@@ -1065,7 +1064,7 @@
                             </div>
 
                             <div class="md-form">
-                                <input type="text" name="phone" id="feedbackPhone" class="form-control" required>
+                                <input type="text" autocomplete="off" name="phone" id="feedbackPhone" class="form-control" required>
                                 <label for="feedbackPhone">Ваш телефон</label>
                                 <div class="invalid-feedback">
                                     поле не должно быть пустым
@@ -1120,7 +1119,8 @@
     </div>
 
     <div class="feedback__popup">
-        <div class="wrapper_col">
+
+        <div class="popup__content">
             <form method="POST" action="" id="popupForm" class="feedback__popup--form content__contact-col--feedback" novalidate>
                 <i class="feedback__popup--form--close fa fa-times"></i>
                 <p class="content__contact-col--feedback--title">ЗАПИШИТЕСЬ НА ПРИЕМ</p>
@@ -1128,7 +1128,7 @@
                 <div class="content__contact-col--feedback--inputs">
 
                     <div class="md-form">
-                        <input type="text" name="name" id="feedback_popup_Name" class="form-control" maxlength="20" required>
+                        <input type="text" autocomplete="off" name="name" id="feedback_popup_Name" class="form-control" maxlength="20" required>
                         <label for="feedback_popup_Name">Ваше имя</label>
                         <div class="invalid-feedback">
                             поле не должно быть пустым
@@ -1136,7 +1136,7 @@
                     </div>
 
                     <div class="md-form">
-                        <input type="text" name="phone" id="feedback_popup_Phone" class="form-control" required>
+                        <input type="text" autocomplete="off" name="phone" id="feedback_popup_Phone" class="form-control" required>
                         <label for="feedback_popup_Phone">Ваш телефон</label>
                         <div class="invalid-feedback">
                             поле не должно быть пустым
@@ -1160,12 +1160,12 @@
                     <i class="feedback__popup--form--close fa fa-times"></i>
                 </div>
                 <div class="result-row-text">
-                    <p class="result_success">Ваша заявка успешно отправлена.</p>
-                    <p class="result_failed">Упс, что-то пошло не так. Проверьте правильность введенных данных или повторите попытку позже.</p>
+                    <p class=""></p>
                 </div>
             </div>
-
         </div>
+
+
     </div>
 
 </body>
