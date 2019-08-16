@@ -14,6 +14,8 @@ window.$ = window.jQuery = require("jquery");
 
 $(document).ready(
     function() {
+
+
         function checkInput(input, result) {
             if (result) {
                 if (input.hasClass('is-invalid')) {
@@ -53,7 +55,7 @@ $(document).ready(
                     checkInput(name, name.val().match(nameReg)) &
                     checkInput(childAge, childAge.val().match(childAgeReg))
                 ) {
-                    showPopupResult(false);
+                    showPopupResult(false, 5000);
                     // $.ajax({
 
                     //     type: "POST",
@@ -62,9 +64,9 @@ $(document).ready(
                     //     success: function(response) {
                     //         //обработка ответа
                     //         var result = JSON.parse(response);
-                    //         showPopupResult(result['sendToEmailStatus']);
+                    //         showPopupResult(result['sendToEmailStatus'],5000);
                     //     }
-                    // });
+                    // }); 
                 }
             });
         }
@@ -82,9 +84,12 @@ $(document).ready(
         const sendResult = $('.feedback__popup--result');
         const popupContent = $('.feedback__popup--result')[0].children[1].children[0];
         const formPopup = $('#popupForm');
+        const resultContainer = $('.result-row-text');
 
-
-        function showPopupResult(result) {
+        function showPopupResult(result, timer = 5000) {
+            sendResult[0].style.backgroundColor = "#f8f8f8";
+            resultContainer[0].style.justifyContent = "center";
+            sendResult[0].style.backgroundImage = "url(../public/images/form-bg.png)";
             popup[0].style.display = "flex";
             body.style.overflow = "hidden";
             formPopup[0].style.display = "none";
@@ -99,13 +104,13 @@ $(document).ready(
             sendResult[0].style.display = "flex";
 
             setTimeout(() => {
-                if (popup[0].style.display != "none") {
+                if (sendResult[0].style.display != "none") {
                     popup.hide();
                     body.style.overflow = "auto";
                     formPopup[0].style.display = "flex";
                     sendResult[0].style.display = "none";
                 }
-            }, 5000);
+            }, timer);
         }
 
 
@@ -161,7 +166,7 @@ $(document).ready(
                 initialSlide: initialSlideResponse.slide_default,
                 rows: 0,
                 pauseOnHover: true,
-                autoplay: true,
+                autoplay: (speed > 0 ? true : false),
                 autoplaySpeed: speed,
                 responsive: [{
                     breakpoint: 1200,
@@ -239,12 +244,14 @@ $(document).ready(
         $('.feedback__popup--form--close').each((i, e) => {
             e.addEventListener('click', () => {
                 popup.hide();
+                resultContainer.find('img').remove();
                 body.style.overflow = "auto";
             });
         });
         $(popup).click(function(e) {
             if (e.target == popup[0] || e.target == $(".feedback__popup > div.wrapper_col")[0]) {
                 $(popup).hide();
+                resultContainer.find('img').remove();
                 body.style.overflow = "auto";
             }
         });
@@ -267,7 +274,8 @@ $(document).ready(
             slide_sm: 0,
             slide_xs: 0,
         }, 5000);
-        carousel('content__office--slider-carousel', 'content__office--slider-next', 'content__office--slider-prev', '.content__office--slider-slide .content__office--slider-slide--container img', {
+        //'.content__office--slider-slide .content__office--slider-slide--container img'
+        carousel('content__office--slider-carousel', 'content__office--slider-next', 'content__office--slider-prev', '', {
             centerMode: false,
             variableWidth: false,
             slideScroll: 1
@@ -304,7 +312,27 @@ $(document).ready(
 
 
 
+        //показ сообщения
+        let slides = $('.content__office--slider-slide--container img');
+        slides.on('click', (e) => {
+            let text = e.target.attributes['result-test-data'].value;
+            let imgClone = $(e.target).clone()[0];
+            imgClone.className = "result_img";
+            resultContainer.prepend(imgClone);
+            resultContainer[0].style.justifyContent = "space-evenly";
+            sendResult[0].style.backgroundColor = "#F7FAFF";
+            sendResult[0].style.backgroundImage = "none";
+            popup[0].style.display = "flex";
+            body.style.overflow = "hidden";
+            formPopup[0].style.display = "none";
+            popupContent.className = "";
+            $(popupContent).addClass('result_test');
+            popupContent.textContent = text;
+            sendResult[0].style.display = "flex";
 
+
+
+        });
 
 
 

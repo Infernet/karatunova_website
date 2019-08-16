@@ -598,8 +598,6 @@
                 width: 80%;
             }
             &-slide {
-                width: 398px;
-                height: 398px;
                 &--container {
                     display: flex;
                     flex-direction: column;
@@ -954,6 +952,7 @@
         background: url("../public/images/office-title-bg.png") no-repeat 5% 0%, url("../public/images/achievement-bg-right.png") no-repeat 100% 0%;
         .wrapper_row {
             justify-content: space-evenly;
+            overflow: hidden;
             @include media-breakpoint-down(md) {
                 flex-direction: column;
             }
@@ -1271,6 +1270,7 @@
         justify-content: center;
         width: 50%;
         height: 550px;
+        max-width: 800px;
         @include media-breakpoint-down(lg) {
             width: 60%;
         }
@@ -1331,25 +1331,57 @@
             display: flex;
             width: 100%;
             align-items: center;
-            justify-content: center;
+            flex-direction: column;
             height: 100%;
+            .result_img {
+                width: 30%;
+            }
+            .result_test {
+                text-align: center;
+                width: 100%;
+                font: {
+                    family: Merriweather;
+                    size: 20px;
+                }
+                color:#193A5E;
+                @include media-breakpoint-down(md) {
+                    font-size: 17px;
+                }
+                @include media-breakpoint-down(sm) {
+                    font-size: 15px;
+                }
+            }
             .result_success {
                 text-align: center;
+                width: 95%;
                 font: {
                     family: Merriweather;
                     size: 35px;
                     weight: bold;
                 }
                 color: #89BE16;
+                @include media-breakpoint-down(md) {
+                    font-size: 30px;
+                }
+                @include media-breakpoint-down(sm) {
+                    font-size: 20px;
+                }
             }
             .result_failed {
                 text-align: center;
+                width: 95%;
                 font: {
                     family: Merriweather;
                     size: 35px;
                     weight: bold;
                 }
                 color:#F06182;
+                @include media-breakpoint-down(md) {
+                    font-size: 30px;
+                }
+                @include media-breakpoint-down(sm) {
+                    font-size: 20px;
+                }
             }
         }
     }
