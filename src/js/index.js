@@ -15,6 +15,15 @@ window.$ = window.jQuery = require("jquery");
 $(document).ready(
     function() {
 
+        //часто используемые элементы
+        const body = $('body')[0];
+        const map = $('#map');
+        const container = $('.content__contact-col').width();
+        const popup = $('.feedback__popup');
+        const sendResult = $('.feedback__popup--result');
+        const popupContent = $('.feedback__popup--result')[0].children[1].children[0];
+        const formPopup = $('#popupForm');
+        const resultContainer = $('.result-row-text');
 
         function checkInput(input, result) {
             if (result) {
@@ -55,18 +64,16 @@ $(document).ready(
                     checkInput(name, name.val().match(nameReg)) &
                     checkInput(childAge, childAge.val().match(childAgeReg))
                 ) {
-                    showPopupResult(false, 5000);
-                    // $.ajax({
-
-                    //     type: "POST",
-                    //     url: "../src/formHandler.php",
-                    //     data: form.serialize(),
-                    //     success: function(response) {
-                    //         //обработка ответа
-                    //         var result = JSON.parse(response);
-                    //         showPopupResult(result['sendToEmailStatus'],5000);
-                    //     }
-                    // }); 
+                    $.ajax({
+                        type: "POST",
+                        url: "../src/formHandler.php",
+                        data: form.serialize(),
+                        success: function(response) {
+                            //обработка ответа
+                            var result = JSON.parse(response);
+                            showPopupResult(result['sendToEmailStatus'], 5000);
+                        }
+                    });
                 }
             });
         }
@@ -76,15 +83,7 @@ $(document).ready(
         handlerForm($('#contactForm'), $('#feedbackName'), $('#feedbackPhone'), $('#feedbackChildAge'));
         handlerForm($('#popupForm'), $('#feedback_popup_Name'), $('#feedback_popup_Phone'), $('#feedback_popup_ChildAge'));
 
-        //часто используемые элементы
-        const body = $('body')[0];
-        const map = $('#map');
-        const container = $('.content__contact-col').width();
-        const popup = $('.feedback__popup');
-        const sendResult = $('.feedback__popup--result');
-        const popupContent = $('.feedback__popup--result')[0].children[1].children[0];
-        const formPopup = $('#popupForm');
-        const resultContainer = $('.result-row-text');
+
 
         function showPopupResult(result, timer = 5000) {
             sendResult[0].style.backgroundColor = "#f8f8f8";
@@ -274,8 +273,8 @@ $(document).ready(
             slide_sm: 0,
             slide_xs: 0,
         }, 5000);
-        //'.content__office--slider-slide .content__office--slider-slide--container img'
-        carousel('content__office--slider-carousel', 'content__office--slider-next', 'content__office--slider-prev', '', {
+
+        carousel('content__psychological-test--slider-carousel', 'content__psychological-test--slider-next', 'content__psychological-test--slider-prev', '', {
             centerMode: false,
             variableWidth: false,
             slideScroll: 1
@@ -305,15 +304,15 @@ $(document).ready(
         }, {
             slide_default: 2,
             slide_lg: 2,
-            slide_md: -1,
-            slide_sm: -1,
-            slide_xs: -1,
+            slide_md: 0,
+            slide_sm: 0,
+            slide_xs: 0,
         }, 4000);
 
 
 
         //показ сообщения
-        let slides = $('.content__office--slider-slide--container img');
+        let slides = $('.content__psychological-test--slider-slide--container img');
         slides.on('click', (e) => {
             let text = e.target.attributes['result-test-data'].value;
             let imgClone = $(e.target).clone()[0];

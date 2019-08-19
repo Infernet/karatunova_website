@@ -524,13 +524,13 @@
             }
         }
     }
-    &__office {
+    &__psychological-test {
         display: flex;
         flex-direction: column;
         padding: 70px 0;
         align-items: center;
         background: {
-            image: url("../public/images/office-body-bg.png");
+            image: url("../public/images/psychological-test-body-bg.png");
             repeat: no-repeat;
             position: 0% -10%;
         }
@@ -543,7 +543,7 @@
             flex-direction: column;
             align-items: center;
             margin: 0 auto;
-            background-image: url("../public/images/office-title-bg.png");
+            background-image: url("../public/images/psychological-test-title-bg.png");
             background-repeat: no-repeat;
             background-position: 35% 0%;
             @include media-breakpoint-down(md) {
@@ -596,6 +596,9 @@
                 justify-content: space-evenly;
                 align-items: center;
                 width: 80%;
+                @include media-breakpoint-down(sm) {
+                    width: 70%;
+                }
             }
             &-slide {
                 &--container {
@@ -679,6 +682,9 @@
                 width: 70%;
                 @include media-breakpoint-down(md) {
                     width: 80%;
+                }
+                @include media-breakpoint-down(sm) {
+                    width: 70%;
                 }
             }
             &-wrapper {
@@ -925,6 +931,9 @@
                 @include media-breakpoint-down(md) {
                     width: 80%;
                 }
+                @include media-breakpoint-down(sm) {
+                    width: 70%;
+                }
             }
             &-slide {
                 margin: auto 20px;
@@ -949,7 +958,7 @@
         //height: 790px;
         justify-content: center;
         margin: 250px 0 50px 0;
-        background: url("../public/images/office-title-bg.png") no-repeat 5% 0%, url("../public/images/achievement-bg-right.png") no-repeat 100% 0%;
+        background: url("../public/images/psychological-test-title-bg.png") no-repeat 5% 0%, url("../public/images/achievement-bg-right.png") no-repeat 100% 0%;
         .wrapper_row {
             justify-content: space-evenly;
             overflow: hidden;
@@ -960,7 +969,7 @@
         @include media-breakpoint-down(md) {
             margin-top: 0;
             padding-top: 100px;
-            background: url("../public/images/office-title-bg.png") no-repeat 20% 5%;
+            background: url("../public/images/psychological-test-title-bg.png") no-repeat 20% 5%;
         }
         @include media-breakpoint-down-xsmall() {
             background-position: 0% 6%;
@@ -1280,6 +1289,10 @@
         @include media-breakpoint-down(sm) {
             width: 100%;
             height: 400px;
+        }
+        @include media-breakpoint-down-xsmall() {
+            min-height: 400px;
+            height: auto;
         }
     }
     &--form {
