@@ -39,7 +39,7 @@ const config = {
                         options: {
                             plugins: [
                                 autoprefixer({
-                                    overrideBrowserslist:['ie >= 8', 'last 4 version']
+                                    overrideBrowserslist: ['ie >= 8', 'last 4 version']
                                 })
                             ],
                             sourceMap: true
@@ -59,25 +59,25 @@ const config = {
                             outputPath: 'public/images',
                         },
                     },
-                    {
-                        loader: 'image-webpack-loader',
-                        options: {
-                            mozjpeg: {
-                                progressive: true,
-                                quality: 65,
-                            },
-                            pngquant: {
-                                quality: '65-90',
-                                speed: 4,
-                            },
-                            gifsicle: {
-                                interlaced: false,
-                            },
-                            webp: {
-                                quality: 75,
-                            },
-                        },
-                    },
+                    // {
+                    //     loader: 'image-webpack-loader',
+                    //     options: {
+                    //         mozjpeg: {
+                    //             progressive: true,
+                    //             quality: 65,
+                    //         },
+                    //         pngquant: {
+                    //             quality: '65-90',
+                    //             speed: 4,
+                    //         },
+                    //         gifsicle: {
+                    //             interlaced: false,
+                    //         },
+                    //         webp: {
+                    //             quality: 75,
+                    //         },
+                    //     },
+                    // },
                 ],
             },
             {
@@ -159,7 +159,7 @@ files.forEach(file => {
                 removeScriptTypeAttributes: true,
                 removeStyleLinkTypeAttributes: true,
                 useShortDoctype: true
-              },
+            },
         })
     );
 });
