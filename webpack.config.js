@@ -7,6 +7,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const PreloadWebpackPlugin = require('preload-webpack-plugin');
 const CssUrlRelativePlugin = require('css-url-relative-plugin');
 const glob = require('glob');
+const autoprefixer = require('autoprefixer');
 
 const IS_DEV = process.env.NODE_ENV === 'dev';
 
@@ -33,6 +34,17 @@ const config = {
                         },
                     },
                     'css-loader',
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                            plugins: [
+                                autoprefixer({
+                                    overrideBrowserslist:['ie >= 8', 'last 4 version']
+                                })
+                            ],
+                            sourceMap: true
+                        }
+                    },
                     'sass-loader',
                 ],
             },
@@ -140,7 +152,14 @@ files.forEach(file => {
             filename: path.basename(file),
             template: file,
             favicon: path.resolve(__dirname, './src/public/favicon.ico'),
-            minify: !IS_DEV,
+            minify: {
+                collapseWhitespace: true,
+                removeComments: true,
+                removeRedundantAttributes: false,
+                removeScriptTypeAttributes: true,
+                removeStyleLinkTypeAttributes: true,
+                useShortDoctype: true
+              },
         })
     );
 });
