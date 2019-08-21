@@ -25,6 +25,10 @@ $(document).ready(
         const formPopup = $('#popupForm');
         const resultContainer = $('.result-row-text');
 
+        $('div.footer-content-design').on('click', function(event) {
+            window.open('https://webrocket.pro');
+        });
+
         function checkInput(input, result) {
             if (result) {
                 if (input.hasClass('is-invalid')) {
@@ -66,7 +70,7 @@ $(document).ready(
                 ) {
                     $.ajax({
                         type: "POST",
-                        url: "../src/formHandler.php",
+                        url: "/src/formHandler.php",
                         data: form.serialize(),
                         success: function(response) {
                             //обработка ответа

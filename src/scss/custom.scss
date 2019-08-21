@@ -47,7 +47,7 @@
 
 .header {
     background: {
-        image: url("../public/images/logo.png");
+        image: url("/public/images/logo.png");
         repeat: no-repeat;
         size: cover;
     }
@@ -202,7 +202,7 @@
                 flex-direction: column;
                 padding: 50px 30px 100px 30px;
                 background: {
-                    image: url("../public/images/achievement-bg-right.png");
+                    image: url("/public/images/achievement-bg-right.png");
                     repeat: no-repeat;
                     size: 50%;
                     position: bottom right;
@@ -255,7 +255,7 @@
             &-left {
                 margin-left: -10%;
                 margin-right: 15px;
-                background-image: url("../public/images/achievement-bg-left.png");
+                background-image: url("/public/images/achievement-bg-left.png");
                 background-repeat: no-repeat;
                 background-size: contain;
                 background-position: center;
@@ -276,7 +276,7 @@
                 margin-left: -14%;
                 display: flex;
                 align-items: center;
-                background-image: url("../public/images/achievement-bg-right.png");
+                background-image: url("/public/images/achievement-bg-right.png");
                 background-repeat: no-repeat;
                 background-size: contain;
                 background-position: center;
@@ -297,7 +297,7 @@
     &__description {
         display: flex;
         flex-direction: row;
-        background-image: url("../public/images/description-bg-tree.png");
+        background-image: url("/public/images/description-bg-tree.png");
         background-repeat: no-repeat;
         background-size: 40%;
         justify-content: center;
@@ -406,7 +406,7 @@
     }
     &__services {
         background: {
-            image: url("../public/images/services-bg.png");
+            image: url("/public/images/services-bg.jpg");
             repeat: no-repeat;
             color: #F7FAFF;
             size: contain;
@@ -530,7 +530,7 @@
         padding: 70px 0;
         align-items: center;
         background: {
-            image: url("../public/images/psychological-test-body-bg.png");
+            image: url("/public/images/psychological-test-body-bg.png");
             repeat: no-repeat;
             position: 0% -10%;
         }
@@ -543,7 +543,7 @@
             flex-direction: column;
             align-items: center;
             margin: 0 auto;
-            background-image: url("../public/images/psychological-test-title-bg.png");
+            background-image: url("/public/images/psychological-test-title-bg.png");
             background-repeat: no-repeat;
             background-position: 35% 0%;
             @include media-breakpoint-down(md) {
@@ -619,7 +619,7 @@
         align-items: center;
         justify-content: center;
         background: {
-            image: url("../public/images/qa-bg.png");
+            image: url("/public/images/qa-bg.png");
             size: cover;
             repeat: no-repeat;
         }
@@ -764,7 +764,7 @@
                 }
                 &--shadow {
                     background: {
-                        image: url("../public/images/qa-shadow.png");
+                        image: url("/public/images/qa-shadow.png");
                         size: cover;
                         repeat: no-repeat;
                     }
@@ -783,7 +783,7 @@
         //height: 600px;
         padding-top: 250px;
         background: {
-            image: url("../public/images/quote-bg.png");
+            image: url("/public/images/quote-bg.png");
             //size: cover;
             repeat: no-repeat;
             position: 100% 25%;
@@ -872,7 +872,7 @@
             margin-bottom: -100px;
         }
         background: {
-            image: url("../public/images/qa-bg.png");
+            image: url("/public/images/qa-bg.png");
             size: cover;
             repeat: no-repeat;
         }
@@ -958,7 +958,7 @@
         //height: 790px;
         justify-content: center;
         margin: 250px 0 50px 0;
-        background: url("../public/images/psychological-test-title-bg.png") no-repeat 5% 0%, url("../public/images/achievement-bg-right.png") no-repeat 100% 0%;
+        background: url("/public/images/psychological-test-title-bg.png") no-repeat 5% 0%, url("/public/images/achievement-bg-right.png") no-repeat 100% 0%;
         .wrapper_row {
             justify-content: space-evenly;
             overflow: hidden;
@@ -969,7 +969,7 @@
         @include media-breakpoint-down(md) {
             margin-top: 0;
             padding-top: 100px;
-            background: url("../public/images/psychological-test-title-bg.png") no-repeat 20% 5%;
+            background: url("/public/images/psychological-test-title-bg.png") no-repeat 20% 5%;
         }
         @include media-breakpoint-down-xsmall() {
             background-position: 0% 6%;
@@ -1042,7 +1042,7 @@
                 align-items: flex-start;
                 justify-content: space-evenly;
                 background: {
-                    image: url("../public/images/form-bg.png");
+                    image: url("/public/images/form-bg.png");
                     repeat: no-repeat;
                     size: cover;
                     position: center center;
@@ -1183,7 +1183,7 @@
     justify-content: center;
     align-items: center;
     background: {
-        image: url("../public/images/footer-bg.png");
+        image: url("/public/images/footer-bg.png");
         size: cover;
         repeat: repeat-x;
         position: center center;
@@ -1239,6 +1239,7 @@
             display: flex;
             flex-direction: row;
             align-items: flex-start;
+            cursor: pointer;
             &-text {
                 font: {
                     family: Roboto;
@@ -1326,7 +1327,7 @@
         width: 100%;
         height: 100%;
         background: {
-            image: url("../public/images/form-bg.png");
+            image: url("/public/images/form-bg.png");
             repeat: no-repeat;
             size: cover;
             position: center center;
