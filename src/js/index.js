@@ -75,6 +75,8 @@ $(document).ready(
                         success: function(response) {
                             //обработка ответа
                             var result = JSON.parse(response);
+                            if (result['sendToEmailStatus'])
+                                ym(55020304, 'reachGoal', 'successful appointment');
                             showPopupResult(result['sendToEmailStatus'], 5000);
                         }
                     });
